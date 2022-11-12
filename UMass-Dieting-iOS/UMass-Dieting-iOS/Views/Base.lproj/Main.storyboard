@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g8n-QJ-cMf">
-                                <rect key="frame" x="0.0" y="108" width="414" height="705"/>
+                                <rect key="frame" x="20" y="108" width="374" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -217,8 +217,8 @@
                         <constraints>
                             <constraint firstItem="g8n-QJ-cMf" firstAttribute="top" secondItem="1VZ-Pe-edl" secondAttribute="top" id="CPl-HY-vxH"/>
                             <constraint firstItem="1VZ-Pe-edl" firstAttribute="bottom" secondItem="g8n-QJ-cMf" secondAttribute="bottom" id="LzJ-4W-1O3"/>
-                            <constraint firstItem="g8n-QJ-cMf" firstAttribute="leading" secondItem="1VZ-Pe-edl" secondAttribute="leading" id="T7o-xH-XhY"/>
-                            <constraint firstItem="1VZ-Pe-edl" firstAttribute="trailing" secondItem="g8n-QJ-cMf" secondAttribute="trailing" id="uX2-cc-3ms"/>
+                            <constraint firstItem="g8n-QJ-cMf" firstAttribute="leading" secondItem="1VZ-Pe-edl" secondAttribute="leading" constant="20" id="T7o-xH-XhY"/>
+                            <constraint firstItem="1VZ-Pe-edl" firstAttribute="trailing" secondItem="g8n-QJ-cMf" secondAttribute="trailing" constant="20" id="uX2-cc-3ms"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Eat" image="fork.knife" catalog="system" id="fKh-WB-OyN"/>
