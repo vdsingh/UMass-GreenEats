@@ -34,7 +34,7 @@ def get_food(food_items, food_list):
 
             serving_size = data.get_attribute('data-serving-size')
             try:
-                serving_size = str(allergens)
+                serving_size = str(serving_size)
             except Exception as a:
                 pass
 
@@ -127,9 +127,12 @@ def main():
         driver.get('https://umassdining.com/locations-menus/' + dh + '/menu')
 
         menu_bfast = {}
-        # if dh in ['worcester', 'berkshire']:
-        #     food_items = driver.find_element(By.ID, 'dining_menu').find_element(By.CLASS_NAME, 'breakfast_fp').find_elements(By.TAG_NAME, 'li')
-        #     get_food(food_items, menu_bfast)
+        try:
+            if dh in ['worcester', 'berkshire']:
+                food_items = driver.find_element(By.ID, 'dining_menu').find_element(By.CLASS_NAME, 'breakfast_fp').find_elements(By.TAG_NAME, 'li')
+                get_food(food_items, menu_bfast)
+        except Exception as e:
+            pass
 
         menu_lunch = {}
         food_items = driver.find_element(By.ID, 'dining_menu').find_element(By.CLASS_NAME, 'lunch_fp').find_elements(By.TAG_NAME, 'li')
