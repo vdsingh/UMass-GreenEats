@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66FC088D0546647CF8A1B6FD /* Pods_UMass_Dieting_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADADE91AAFF913CD86C93C0 /* Pods_UMass_Dieting_iOS.framework */; };
 		7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C80F291F5B270084DB78 /* AppDelegate.swift */; };
 		7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C811291F5B270084DB78 /* SceneDelegate.swift */; };
 		7435C814291F5B270084DB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C813291F5B270084DB78 /* ViewController.swift */; };
@@ -16,7 +17,12 @@
 		74A23551291F9B8700DDBAA6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 74A23550291F9B8700DDBAA6 /* .gitignore */; };
 		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
-		B94792A8291F9DC600C32FE5 /* Vik.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94792A7291F9DC600C32FE5 /* Vik.storyboard */; };
+		B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94792A7291F9DC600C32FE5 /* Main1.storyboard */; };
+		B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */; };
+		B94792AC291FA57300C32FE5 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792AB291FA57300C32FE5 /* Food.swift */; };
+		B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792AD291FA5DB00C32FE5 /* MealPlan.swift */; };
+		B94792B2291FB51500C32FE5 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792B1291FB51500C32FE5 /* FoodTableViewCell.swift */; };
+		B94792B42920386A00C32FE5 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792B32920386A00C32FE5 /* K.swift */; };
 		B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */; };
 		B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D79A291F696800E01F31 /* Extensions.swift */; };
 		B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */; };
@@ -26,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33BEDE3D00E1257C7354D5A0 /* Pods-UMass-Dieting-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMass-Dieting-iOS.debug.xcconfig"; path = "Target Support Files/Pods-UMass-Dieting-iOS/Pods-UMass-Dieting-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		48EAC40109852F3E44BE51C1 /* Pods-UMass-Dieting-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UMass-Dieting-iOS.release.xcconfig"; path = "Target Support Files/Pods-UMass-Dieting-iOS/Pods-UMass-Dieting-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7435C80C291F5B270084DB78 /* UMass-Dieting-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMass-Dieting-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7435C80F291F5B270084DB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7435C811291F5B270084DB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,13 +45,19 @@
 		74A23550291F9B8700DDBAA6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		B94792A7291F9DC600C32FE5 /* Vik.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vik.storyboard; sourceTree = "<group>"; };
+		B94792A7291F9DC600C32FE5 /* Main1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main1.storyboard; sourceTree = "<group>"; };
+		B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanViewController.swift; sourceTree = "<group>"; };
+		B94792AB291FA57300C32FE5 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		B94792AD291FA5DB00C32FE5 /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
+		B94792B1291FB51500C32FE5 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		B94792B32920386A00C32FE5 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFormViewController.swift; sourceTree = "<group>"; };
 		B9A8D79A291F696800E01F31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallListViewController.swift; sourceTree = "<group>"; };
 		B9A8D7A6291F7C6D00E01F31 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		B9A8D7A8291F7C8A00E01F31 /* DiningHall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHall.swift; sourceTree = "<group>"; };
 		B9A8D7AA291F89BB00E01F31 /* DiningHallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallTableViewCell.swift; sourceTree = "<group>"; };
+		CADADE91AAFF913CD86C93C0 /* Pods_UMass_Dieting_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMass_Dieting_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,18 +65,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66FC088D0546647CF8A1B6FD /* Pods_UMass_Dieting_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01EDA3DFA3A7B1D24E473FE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33BEDE3D00E1257C7354D5A0 /* Pods-UMass-Dieting-iOS.debug.xcconfig */,
+				48EAC40109852F3E44BE51C1 /* Pods-UMass-Dieting-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7435C803291F5B270084DB78 = {
 			isa = PBXGroup;
 			children = (
 				74A23550291F9B8700DDBAA6 /* .gitignore */,
 				7435C80E291F5B270084DB78 /* UMass-Dieting-iOS */,
 				7435C80D291F5B270084DB78 /* Products */,
+				01EDA3DFA3A7B1D24E473FE2 /* Pods */,
+				996A54CD38CAB0F59ECF09F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,10 +112,20 @@
 			path = "UMass-Dieting-iOS";
 			sourceTree = "<group>";
 		};
+		996A54CD38CAB0F59ECF09F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CADADE91AAFF913CD86C93C0 /* Pods_UMass_Dieting_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9A8D794291F5BB000E01F31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B9A8D7A8291F7C8A00E01F31 /* DiningHall.swift */,
+				B94792AB291FA57300C32FE5 /* Food.swift */,
+				B94792AD291FA5DB00C32FE5 /* MealPlan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,7 +137,8 @@
 				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
 				7435C818291F5B290084DB78 /* Assets.xcassets */,
 				B9A8D7AA291F89BB00E01F31 /* DiningHallTableViewCell.swift */,
-				B94792A7291F9DC600C32FE5 /* Vik.storyboard */,
+				B94792A7291F9DC600C32FE5 /* Main1.storyboard */,
+				B94792B1291FB51500C32FE5 /* FoodTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +151,7 @@
 				74D267B3291F7B4C000644DE /* LoginViewController.swift */,
 				74D267B5291F7B58000644DE /* SignUpViewController.swift */,
 				B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */,
+				B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -125,6 +163,7 @@
 				7435C811291F5B270084DB78 /* SceneDelegate.swift */,
 				B9A8D79A291F696800E01F31 /* Extensions.swift */,
 				B9A8D7A6291F7C6D00E01F31 /* State.swift */,
+				B94792B32920386A00C32FE5 /* K.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -136,6 +175,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7435C820291F5B290084DB78 /* Build configuration list for PBXNativeTarget "UMass-Dieting-iOS" */;
 			buildPhases = (
+				1B61E99EACD38D22B57A5EC2 /* [CP] Check Pods Manifest.lock */,
 				7435C808291F5B270084DB78 /* Sources */,
 				7435C809291F5B270084DB78 /* Frameworks */,
 				7435C80A291F5B270084DB78 /* Resources */,
@@ -190,12 +230,37 @@
 				74A23551291F9B8700DDBAA6 /* .gitignore in Resources */,
 				7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */,
 				7435C819291F5B290084DB78 /* Assets.xcassets in Resources */,
-				B94792A8291F9DC600C32FE5 /* Vik.storyboard in Resources */,
+				B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */,
 				7435C817291F5B270084DB78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B61E99EACD38D22B57A5EC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UMass-Dieting-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7435C808291F5B270084DB78 /* Sources */ = {
@@ -204,13 +269,18 @@
 			files = (
 				74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */,
 				74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */,
+				B94792B2291FB51500C32FE5 /* FoodTableViewCell.swift in Sources */,
 				B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */,
 				7435C814291F5B270084DB78 /* ViewController.swift in Sources */,
+				B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */,
 				7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */,
 				B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */,
 				B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */,
 				7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */,
+				B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */,
+				B94792AC291FA57300C32FE5 /* Food.swift in Sources */,
 				B9A8D7A9291F7C8A00E01F31 /* DiningHall.swift in Sources */,
+				B94792B42920386A00C32FE5 /* K.swift in Sources */,
 				B9A8D7AB291F89BB00E01F31 /* DiningHallTableViewCell.swift in Sources */,
 				B9A8D7A7291F7C6D00E01F31 /* State.swift in Sources */,
 			);
@@ -354,6 +424,7 @@
 		};
 		7435C821291F5B290084DB78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33BEDE3D00E1257C7354D5A0 /* Pods-UMass-Dieting-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +453,7 @@
 		};
 		7435C822291F5B290084DB78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48EAC40109852F3E44BE51C1 /* Pods-UMass-Dieting-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

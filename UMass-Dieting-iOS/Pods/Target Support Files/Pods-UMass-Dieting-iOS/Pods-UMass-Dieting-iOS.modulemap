@@ -1,0 +1,6 @@
+framework module Pods_UMass_Dieting_iOS {
+  umbrella header "Pods-UMass-Dieting-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
