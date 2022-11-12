@@ -54,7 +54,7 @@ extension DiningHallListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return State.shared.diningHalls.count
     }
-    
+//    ToMealPlanViewController
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("CELL FOR ROW AT CALLED")
         let diningHall: DiningHall = State.shared.diningHalls[indexPath.row]
@@ -72,6 +72,7 @@ extension DiningHallListViewController: UITableViewDataSource {
 extension DiningHallListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected dining hall!")
+        performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
