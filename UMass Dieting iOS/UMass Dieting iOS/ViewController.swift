@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  UMassDiets
+//  UMass Dieting iOS
 //
-//  Created by Vikram Singh on 11/11/22.
+//  Created by Aayush Bhagat on 11/11/22.
 //
 
 import UIKit
