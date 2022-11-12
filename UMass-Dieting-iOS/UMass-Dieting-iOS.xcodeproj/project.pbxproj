@@ -56,15 +56,47 @@
 		7435C80E291F5B270084DB78 /* UMass-Dieting-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7435C80F291F5B270084DB78 /* AppDelegate.swift */,
-				7435C811291F5B270084DB78 /* SceneDelegate.swift */,
-				7435C813291F5B270084DB78 /* ViewController.swift */,
-				7435C815291F5B270084DB78 /* Main.storyboard */,
-				7435C818291F5B290084DB78 /* Assets.xcassets */,
-				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
+				B9A8D797291F5BBD00E01F31 /* Resources */,
+				B9A8D796291F5BB800E01F31 /* Controllers */,
+				B9A8D795291F5BB400E01F31 /* Views */,
+				B9A8D794291F5BB000E01F31 /* Models */,
 				7435C81D291F5B290084DB78 /* Info.plist */,
 			);
 			path = "UMass-Dieting-iOS";
+			sourceTree = "<group>";
+		};
+		B9A8D794291F5BB000E01F31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9A8D795291F5BB400E01F31 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7435C815291F5B270084DB78 /* Main.storyboard */,
+				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
+				7435C818291F5B290084DB78 /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B9A8D796291F5BB800E01F31 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7435C813291F5B270084DB78 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B9A8D797291F5BBD00E01F31 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7435C80F291F5B270084DB78 /* AppDelegate.swift */,
+				7435C811291F5B270084DB78 /* SceneDelegate.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
