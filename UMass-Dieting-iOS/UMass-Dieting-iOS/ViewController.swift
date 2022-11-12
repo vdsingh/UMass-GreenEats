@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  UMass Dieting iOS
+//  UMass-Dieting-iOS
 //
 //  Created by Aayush Bhagat on 11/11/22.
 //

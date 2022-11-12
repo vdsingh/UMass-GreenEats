@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7435C7F0291F5AAA0084DB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C7EF291F5AAA0084DB78 /* AppDelegate.swift */; };
-		7435C7F2291F5AAA0084DB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C7F1291F5AAA0084DB78 /* SceneDelegate.swift */; };
-		7435C7F4291F5AAA0084DB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C7F3291F5AAA0084DB78 /* ViewController.swift */; };
-		7435C7F7291F5AAA0084DB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C7F5291F5AAA0084DB78 /* Main.storyboard */; };
-		7435C7F9291F5AAC0084DB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435C7F8291F5AAC0084DB78 /* Assets.xcassets */; };
-		7435C7FC291F5AAC0084DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C7FA291F5AAC0084DB78 /* LaunchScreen.storyboard */; };
+		7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C80F291F5B270084DB78 /* AppDelegate.swift */; };
+		7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C811291F5B270084DB78 /* SceneDelegate.swift */; };
+		7435C814291F5B270084DB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C813291F5B270084DB78 /* ViewController.swift */; };
+		7435C817291F5B270084DB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C815291F5B270084DB78 /* Main.storyboard */; };
+		7435C819291F5B290084DB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435C818291F5B290084DB78 /* Assets.xcassets */; };
+		7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7435C7EC291F5AAA0084DB78 /* UMass Dieting iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMass Dieting iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7435C7EF291F5AAA0084DB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7435C7F1291F5AAA0084DB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7435C7F3291F5AAA0084DB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7435C7F6291F5AAA0084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7435C7F8291F5AAC0084DB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7435C7FB291F5AAC0084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7435C7FD291F5AAC0084DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7435C80C291F5B270084DB78 /* UMass-Dieting-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMass-Dieting-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7435C80F291F5B270084DB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7435C811291F5B270084DB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7435C813291F5B270084DB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7435C816291F5B270084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7435C818291F5B290084DB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7435C81B291F5B290084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7435C81D291F5B290084DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7435C7E9291F5AAA0084DB78 /* Frameworks */ = {
+		7435C809291F5B270084DB78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7435C7E3291F5AA90084DB78 = {
+		7435C803291F5B270084DB78 = {
 			isa = PBXGroup;
 			children = (
-				7435C7EE291F5AAA0084DB78 /* UMass Dieting iOS */,
-				7435C7ED291F5AAA0084DB78 /* Products */,
+				7435C80E291F5B270084DB78 /* UMass-Dieting-iOS */,
+				7435C80D291F5B270084DB78 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7435C7ED291F5AAA0084DB78 /* Products */ = {
+		7435C80D291F5B270084DB78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7435C7EC291F5AAA0084DB78 /* UMass Dieting iOS.app */,
+				7435C80C291F5B270084DB78 /* UMass-Dieting-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7435C7EE291F5AAA0084DB78 /* UMass Dieting iOS */ = {
+		7435C80E291F5B270084DB78 /* UMass-Dieting-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7435C7EF291F5AAA0084DB78 /* AppDelegate.swift */,
-				7435C7F1291F5AAA0084DB78 /* SceneDelegate.swift */,
-				7435C7F3291F5AAA0084DB78 /* ViewController.swift */,
-				7435C7F5291F5AAA0084DB78 /* Main.storyboard */,
-				7435C7F8291F5AAC0084DB78 /* Assets.xcassets */,
-				7435C7FA291F5AAC0084DB78 /* LaunchScreen.storyboard */,
-				7435C7FD291F5AAC0084DB78 /* Info.plist */,
+				7435C80F291F5B270084DB78 /* AppDelegate.swift */,
+				7435C811291F5B270084DB78 /* SceneDelegate.swift */,
+				7435C813291F5B270084DB78 /* ViewController.swift */,
+				7435C815291F5B270084DB78 /* Main.storyboard */,
+				7435C818291F5B290084DB78 /* Assets.xcassets */,
+				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
+				7435C81D291F5B290084DB78 /* Info.plist */,
 			);
-			path = "UMass Dieting iOS";
+			path = "UMass-Dieting-iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7435C7EB291F5AAA0084DB78 /* UMass Dieting iOS */ = {
+		7435C80B291F5B270084DB78 /* UMass-Dieting-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7435C800291F5AAC0084DB78 /* Build configuration list for PBXNativeTarget "UMass Dieting iOS" */;
+			buildConfigurationList = 7435C820291F5B290084DB78 /* Build configuration list for PBXNativeTarget "UMass-Dieting-iOS" */;
 			buildPhases = (
-				7435C7E8291F5AAA0084DB78 /* Sources */,
-				7435C7E9291F5AAA0084DB78 /* Frameworks */,
-				7435C7EA291F5AAA0084DB78 /* Resources */,
+				7435C808291F5B270084DB78 /* Sources */,
+				7435C809291F5B270084DB78 /* Frameworks */,
+				7435C80A291F5B270084DB78 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "UMass Dieting iOS";
-			productName = "UMass Dieting iOS";
-			productReference = 7435C7EC291F5AAA0084DB78 /* UMass Dieting iOS.app */;
+			name = "UMass-Dieting-iOS";
+			productName = "UMass-Dieting-iOS";
+			productReference = 7435C80C291F5B270084DB78 /* UMass-Dieting-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7435C7E4291F5AA90084DB78 /* Project object */ = {
+		7435C804291F5B270084DB78 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					7435C7EB291F5AAA0084DB78 = {
+					7435C80B291F5B270084DB78 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 7435C7E7291F5AA90084DB78 /* Build configuration list for PBXProject "UMass Dieting iOS" */;
+			buildConfigurationList = 7435C807291F5B270084DB78 /* Build configuration list for PBXProject "UMass-Dieting-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 7435C7E3291F5AA90084DB78;
-			productRefGroup = 7435C7ED291F5AAA0084DB78 /* Products */;
+			mainGroup = 7435C803291F5B270084DB78;
+			productRefGroup = 7435C80D291F5B270084DB78 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7435C7EB291F5AAA0084DB78 /* UMass Dieting iOS */,
+				7435C80B291F5B270084DB78 /* UMass-Dieting-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7435C7EA291F5AAA0084DB78 /* Resources */ = {
+		7435C80A291F5B270084DB78 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7435C7FC291F5AAC0084DB78 /* LaunchScreen.storyboard in Resources */,
-				7435C7F9291F5AAC0084DB78 /* Assets.xcassets in Resources */,
-				7435C7F7291F5AAA0084DB78 /* Main.storyboard in Resources */,
+				7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */,
+				7435C819291F5B290084DB78 /* Assets.xcassets in Resources */,
+				7435C817291F5B270084DB78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7435C7E8291F5AAA0084DB78 /* Sources */ = {
+		7435C808291F5B270084DB78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7435C7F4291F5AAA0084DB78 /* ViewController.swift in Sources */,
-				7435C7F0291F5AAA0084DB78 /* AppDelegate.swift in Sources */,
-				7435C7F2291F5AAA0084DB78 /* SceneDelegate.swift in Sources */,
+				7435C814291F5B270084DB78 /* ViewController.swift in Sources */,
+				7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */,
+				7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7435C7F5291F5AAA0084DB78 /* Main.storyboard */ = {
+		7435C815291F5B270084DB78 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7435C7F6291F5AAA0084DB78 /* Base */,
+				7435C816291F5B270084DB78 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		7435C7FA291F5AAC0084DB78 /* LaunchScreen.storyboard */ = {
+		7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7435C7FB291F5AAC0084DB78 /* Base */,
+				7435C81B291F5B290084DB78 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7435C7FE291F5AAC0084DB78 /* Debug */ = {
+		7435C81E291F5B290084DB78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		7435C7FF291F5AAC0084DB78 /* Release */ = {
+		7435C81F291F5B290084DB78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,7 +280,7 @@
 			};
 			name = Release;
 		};
-		7435C801291F5AAC0084DB78 /* Debug */ = {
+		7435C821291F5B290084DB78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -288,7 +288,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UMass Dieting iOS/Info.plist";
+				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -307,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		7435C802291F5AAC0084DB78 /* Release */ = {
+		7435C822291F5B290084DB78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -315,7 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UMass Dieting iOS/Info.plist";
+				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -337,25 +337,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7435C7E7291F5AA90084DB78 /* Build configuration list for PBXProject "UMass Dieting iOS" */ = {
+		7435C807291F5B270084DB78 /* Build configuration list for PBXProject "UMass-Dieting-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7435C7FE291F5AAC0084DB78 /* Debug */,
-				7435C7FF291F5AAC0084DB78 /* Release */,
+				7435C81E291F5B290084DB78 /* Debug */,
+				7435C81F291F5B290084DB78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7435C800291F5AAC0084DB78 /* Build configuration list for PBXNativeTarget "UMass Dieting iOS" */ = {
+		7435C820291F5B290084DB78 /* Build configuration list for PBXNativeTarget "UMass-Dieting-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7435C801291F5AAC0084DB78 /* Debug */,
-				7435C802291F5AAC0084DB78 /* Release */,
+				7435C821291F5B290084DB78 /* Debug */,
+				7435C822291F5B290084DB78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7435C7E4291F5AA90084DB78 /* Project object */;
+	rootObject = 7435C804291F5B270084DB78 /* Project object */;
 }
