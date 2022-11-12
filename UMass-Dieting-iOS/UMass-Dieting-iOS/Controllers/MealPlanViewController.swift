@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 class MealPlanViewController: UIViewController {
     
+    var selectedFood: Food? = nil
+    
     var mealPlan: MealPlan? = MealPlan(foods: [
-        Food(name: "Chicken", servingString: "16oz", calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 1, tags: []),
-        Food(name: "Broccoli", servingString: "16oz", calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 2, tags: ["vegetarian"]),
-        Food(name: "Rice", servingString: "16oz", calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 3, tags: ["vegetarian", "local"])
+        Food(name: "Chicken", servingString: "16oz", servingSize: "2oz", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 1, tags: []),
+        Food(name: "Broccoli", servingString: "16oz", servingSize: "3 Pieces", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 2, tags: ["vegetarian"]),
+        Food(name: "Rice", servingString: "16oz", servingSize: "15 Grains", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 3, tags: ["vegetarian", "local"])
     ], calories: 25, saturatedFat: 30, transFat: 35, cholesterol: 40, sodium: 20, total_carbs: 20, dietary_fiber: 30, sugars: 20, protein: 20)
     
     @IBOutlet weak var foodsTableView: UITableView!
@@ -69,11 +71,9 @@ extension MealPlanViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("CELLFORROWAT")
         guard let mealPlan = self.mealPlan else {
             fatalError("$ERROR: Meal plan is nil!")
         }
-        print("FOOD CELLFORROWAT")
         if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.reuseIdentifier, for: indexPath) as? FoodTableViewCell {
             let food: Food = mealPlan.foods[indexPath.row]
             cell.food = food
@@ -86,8 +86,18 @@ extension MealPlanViewController: UITableViewDataSource {
 }
 
 extension MealPlanViewController: UITableViewDelegate {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? FoodViewController {
+            guard let food = selectedFood else {
+                fatalError("$ERROR: Food is nil.")
+            }
+            destination.food = food
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("SELECTED ROW: \(indexPath.row)")
+        self.selectedFood = mealPlan?.foods[indexPath.row]
+        performSegue(withIdentifier: "ToFoodViewController", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
