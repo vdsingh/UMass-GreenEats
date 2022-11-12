@@ -14,9 +14,9 @@ def get_food(food_items, food_list):
             except Exception as a:
                 pass
 
-            healthfulness = data.get_attribute('data-healthfulness')
+            healthfulness = data.get_attribute('data-healthfulness')[:-1]
             try:
-                healthfulness = str(healthfulness)
+                healthfulness = int(healthfulness)
             except Exception as a:
                 pass
         
