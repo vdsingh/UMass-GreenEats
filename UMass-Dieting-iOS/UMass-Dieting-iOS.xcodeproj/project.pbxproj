@@ -13,6 +13,7 @@
 		7435C817291F5B270084DB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C815291F5B270084DB78 /* Main.storyboard */; };
 		7435C819291F5B290084DB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435C818291F5B290084DB78 /* Assets.xcassets */; };
 		7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */; };
+		7435C826291F5F5E0084DB78 /* Auth-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C825291F5F5E0084DB78 /* Auth-Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7435C818291F5B290084DB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7435C81B291F5B290084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7435C81D291F5B290084DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7435C825291F5F5E0084DB78 /* Auth-Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Auth-Storyboard.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				7435C815291F5B270084DB78 /* Main.storyboard */,
 				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
 				7435C818291F5B290084DB78 /* Assets.xcassets */,
+				7435C825291F5F5E0084DB78 /* Auth-Storyboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */,
+				7435C826291F5F5E0084DB78 /* Auth-Storyboard.storyboard in Resources */,
 				7435C819291F5B290084DB78 /* Assets.xcassets in Resources */,
 				7435C817291F5B270084DB78 /* Main.storyboard in Resources */,
 			);
@@ -319,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -346,6 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
