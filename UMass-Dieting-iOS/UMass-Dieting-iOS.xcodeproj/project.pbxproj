@@ -14,6 +14,8 @@
 		7435C819291F5B290084DB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435C818291F5B290084DB78 /* Assets.xcassets */; };
 		7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */; };
 		74D267B2291F7733000644DE /* Auth-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D267B1291F7733000644DE /* Auth-Storyboard.storyboard */; };
+		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
+		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
 		B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */; };
 		B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D79A291F696800E01F31 /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		7435C81B291F5B290084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7435C81D291F5B290084DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74D267B1291F7733000644DE /* Auth-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Auth-Storyboard.storyboard"; sourceTree = "<group>"; };
+		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFormViewController.swift; sourceTree = "<group>"; };
 		B9A8D79A291F696800E01F31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +98,8 @@
 			children = (
 				7435C813291F5B270084DB78 /* ViewController.swift */,
 				B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */,
+				74D267B3291F7B4C000644DE /* LoginViewController.swift */,
+				74D267B5291F7B58000644DE /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +186,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */,
+				74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */,
 				B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */,
 				7435C814291F5B270084DB78 /* ViewController.swift in Sources */,
 				7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */,
@@ -331,7 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJUSE27PV3;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -359,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJUSE27PV3;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

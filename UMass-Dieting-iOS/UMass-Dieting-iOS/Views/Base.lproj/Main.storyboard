@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xc2-z3-IXp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OaI-hF-Pah">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -27,7 +27,7 @@
         <!--User Info Form View Controller-->
         <scene sceneID="OVo-Bx-8wB">
             <objects>
-                <viewController id="xc2-z3-IXp" customClass="UserInfoFormViewController" customModule="UMass_Dieting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserInfoVC" id="xc2-z3-IXp" customClass="UserInfoFormViewController" customModule="UMass_Dieting_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOB-PP-ATb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +162,7 @@
                             <constraint firstItem="4hW-jQ-WRQ" firstAttribute="centerX" secondItem="MOB-PP-ATb" secondAttribute="centerX" id="ujU-eA-Q7K"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Rfd-FJ-fTl"/>
                     <connections>
                         <outlet property="activityLevelPopUpButton" destination="DGX-By-KJX" id="P01-PN-OaN"/>
                         <outlet property="ageTextField" destination="HkQ-e7-wu4" id="P23-PL-R7M"/>
@@ -194,7 +195,7 @@
         <!--SignUp View Controller-->
         <scene sceneID="L6j-Vg-fP2">
             <objects>
-                <viewController title="SignUp View Controller" id="b4E-jg-bRf" sceneMemberID="viewController">
+                <viewController title="SignUp View Controller" id="b4E-jg-bRf" customClass="SignUpViewController" customModule="UMass_Dieting_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eEN-UP-PlT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +225,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dlf-Rq-6w3">
                                         <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -236,6 +237,9 @@
                                 <rect key="frame" x="150" y="391.5" width="114" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="b4E-jg-bRf" eventType="touchUpInside" id="PME-Jz-gC9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lzN-W9-MMU"/>
@@ -254,10 +258,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BAc-9U-NEL"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Cyz-dD-al9" id="sB5-jK-R5l"/>
+                        <outlet property="nameTextField" destination="bfn-Zx-Q9G" id="nha-jt-69K"/>
+                        <outlet property="passwordTextField" destination="Dlf-Rq-6w3" id="hwV-T3-q3U"/>
+                        <outlet property="signUpButton" destination="L22-A5-hVl" id="9gY-4U-xRY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZg-Nl-cGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733" y="149"/>
+            <point key="canvasLocation" x="713" y="142"/>
         </scene>
         <!--Intial View Controller-->
         <scene sceneID="eP9-e0-dLe">
@@ -313,7 +323,7 @@
         <!--Login View Controller-->
         <scene sceneID="9TB-eE-Oov">
             <objects>
-                <viewController title="Login View Controller" id="kD4-yo-3RO" sceneMemberID="viewController">
+                <viewController title="Login View Controller" id="kD4-yo-3RO" customClass="LoginViewController" customModule="UMass_Dieting_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f7n-Ux-Ci5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,7 +342,7 @@
                                             <constraint firstAttribute="height" constant="40" id="g8j-Hc-E6e"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -350,6 +360,9 @@
                                 <rect key="frame" x="150" y="326.5" width="114" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="kD4-yo-3RO" eventType="touchUpInside" id="oeS-he-FhI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ye5-LT-G3e"/>
@@ -368,6 +381,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TlI-wO-Lfk"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="UNs-5U-Lmx" id="PmZ-aA-qP3"/>
+                        <outlet property="loginButton" destination="oN3-Kz-hXf" id="zYT-xY-BBF"/>
+                        <outlet property="passwordTextField" destination="1Uz-gT-Crx" id="8RL-Gt-hdO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9p2-wh-Im5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
