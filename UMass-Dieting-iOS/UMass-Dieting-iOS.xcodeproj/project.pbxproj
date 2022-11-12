@@ -23,6 +23,7 @@
 		B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792AD291FA5DB00C32FE5 /* MealPlan.swift */; };
 		B94792B2291FB51500C32FE5 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792B1291FB51500C32FE5 /* FoodTableViewCell.swift */; };
 		B94792B42920386A00C32FE5 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792B32920386A00C32FE5 /* K.swift */; };
+		B94792BC2920489000C32FE5 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792BB2920489000C32FE5 /* FoodViewController.swift */; };
 		B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */; };
 		B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D79A291F696800E01F31 /* Extensions.swift */; };
 		B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */; };
@@ -51,6 +52,7 @@
 		B94792AD291FA5DB00C32FE5 /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
 		B94792B1291FB51500C32FE5 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		B94792B32920386A00C32FE5 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		B94792BB2920489000C32FE5 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFormViewController.swift; sourceTree = "<group>"; };
 		B9A8D79A291F696800E01F31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallListViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				74D267B5291F7B58000644DE /* SignUpViewController.swift */,
 				B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */,
 				B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */,
+				B94792BB2920489000C32FE5 /* FoodViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */,
 				74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */,
+				B94792BC2920489000C32FE5 /* FoodViewController.swift in Sources */,
 				B94792B2291FB51500C32FE5 /* FoodTableViewCell.swift in Sources */,
 				B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */,
 				7435C814291F5B270084DB78 /* ViewController.swift in Sources */,
