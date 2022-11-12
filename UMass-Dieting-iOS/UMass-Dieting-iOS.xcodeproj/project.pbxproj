@@ -13,7 +13,7 @@
 		7435C817291F5B270084DB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C815291F5B270084DB78 /* Main.storyboard */; };
 		7435C819291F5B290084DB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435C818291F5B290084DB78 /* Assets.xcassets */; };
 		7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */; };
-		74D267B2291F7733000644DE /* Auth-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D267B1291F7733000644DE /* Auth-Storyboard.storyboard */; };
+		74A23551291F9B8700DDBAA6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 74A23550291F9B8700DDBAA6 /* .gitignore */; };
 		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
 		B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */; };
@@ -34,6 +34,7 @@
 		7435C818291F5B290084DB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7435C81B291F5B290084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7435C81D291F5B290084DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A23550291F9B8700DDBAA6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		74D267B1291F7733000644DE /* Auth-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Auth-Storyboard.storyboard"; sourceTree = "<group>"; };
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		7435C803291F5B270084DB78 = {
 			isa = PBXGroup;
 			children = (
+				74A23550291F9B8700DDBAA6 /* .gitignore */,
 				7435C80E291F5B270084DB78 /* UMass-Dieting-iOS */,
 				7435C80D291F5B270084DB78 /* Products */,
 			);
@@ -187,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A23551291F9B8700DDBAA6 /* .gitignore in Resources */,
 				7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */,
 				B9A8D79F291F76C700E01F31 /* Auth-Storyboard.storyboard in Resources */,
 				7435C819291F5B290084DB78 /* Assets.xcassets in Resources */,
