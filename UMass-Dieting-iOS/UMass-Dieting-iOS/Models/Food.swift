@@ -10,7 +10,10 @@ struct Food: Codable {
     let name: String
     let servingString: String
     
+    let servingSize: String
     let calories: Float32
+    let fatCal: Float32
+    let totalFat: Float32
     let saturatedFat: Float32
     let transFat: Float32
     let cholesterol: Float32
