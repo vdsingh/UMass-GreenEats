@@ -14,6 +14,7 @@ class DiningHallListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Dining Halls"
+        navigationController?.title = ""
         diningHallTableView.delegate = self
         diningHallTableView.dataSource = self
 //        diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
