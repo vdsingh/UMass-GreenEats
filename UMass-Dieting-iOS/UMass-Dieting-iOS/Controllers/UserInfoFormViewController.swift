@@ -121,6 +121,7 @@ extension UserInfoFormViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("TEXTFIELD DID END EDITING")
+        textField.resignFirstResponder()
         renderNextButton()
     }
 }

@@ -24,7 +24,7 @@ admin.initializeApp({
 });
 const db = admin.firestore();
 
-app.use(cors({ origin: true }));
+app.use(cors());
 
 app.post('/api/scrape', (req, res) => {
     fs.readFile("./data.json", "utf8", (err, jsonString) => {
@@ -84,7 +84,7 @@ app.post('/api/users/create', (req, res) => {
         location_lat,
         location_long,
         tag_preferences,
-        reccomended_calories
+        recommended_calories
     } = req.body;
     (async () => {
         try {
@@ -99,7 +99,7 @@ app.post('/api/users/create', (req, res) => {
                 location_lat,
                 location_long,
                 tag_preferences,
-                reccomended_calories
+                recommended_calories
             });                
             return res.status(200).send();
         } catch (error) {
@@ -109,18 +109,38 @@ app.post('/api/users/create', (req, res) => {
         })();
 });
 
-app.post('/api/reccomendations/create', (req, res) => {
+app.post('/api/recommendations/create', (req, res) => {
     const {
-        tag_preferences,
-        reccomended_calories
+        user_ID,
+        dining_hall,
+        menu
     } = req.body;
     (async () => {
         try {
             // TODO: logic
+            let food_info;
+            const data = await db.collection('database').doc('data').get()
+            .then(data => {
+                const foods = [];
+                for (const food in data.data()[dining_hall][menu]) {
+                    foods.push(data.data()[dining_hall][menu][food]);
+                }
+                food_info = foods;
+            })
+            
 
-            // calculate reccomended 
+            
+            let tag_preferences;
+            let recommended_calories;
+            let user_info = await db.collection('users').doc(user_ID).get()
+            .then(user_info => {
+                tag_preferences = user_info.data()["tag_preferences"]
+                recommended_calories = user_info.data()["reccomended_calories"]
+            })
+            
+            
 
-            return res.status(200).send();
+            return res.status(200).send({tag_preferences, recommended_calories, food_info});
         } catch (error) {
             console.log(error);
             return res.status(500).send(error);
