@@ -15,6 +15,8 @@
 		7435C819291F5B290084DB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435C818291F5B290084DB78 /* Assets.xcassets */; };
 		7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */; };
 		74A23551291F9B8700DDBAA6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 74A23550291F9B8700DDBAA6 /* .gitignore */; };
+		74A23553292049DF00DDBAA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A23552292049DF00DDBAA6 /* Constants.swift */; };
+		74A2355629204BCC00DDBAA6 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2355529204BCC00DDBAA6 /* Sessions.swift */; };
 		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
 		B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94792A7291F9DC600C32FE5 /* Main1.storyboard */; };
@@ -43,6 +45,8 @@
 		7435C81B291F5B290084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7435C81D291F5B290084DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A23550291F9B8700DDBAA6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		74A23552292049DF00DDBAA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		74A2355529204BCC00DDBAA6 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B94792A7291F9DC600C32FE5 /* Main1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main1.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,14 @@
 			path = "UMass-Dieting-iOS";
 			sourceTree = "<group>";
 		};
+		74A2355429204BAF00DDBAA6 /* URLSessions */ = {
+			isa = PBXGroup;
+			children = (
+				74A2355529204BCC00DDBAA6 /* Sessions.swift */,
+			);
+			path = URLSessions;
+			sourceTree = "<group>";
+		};
 		996A54CD38CAB0F59ECF09F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +158,7 @@
 		B9A8D796291F5BB800E01F31 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				74A2355429204BAF00DDBAA6 /* URLSessions */,
 				7435C813291F5B270084DB78 /* ViewController.swift */,
 				B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */,
 				74D267B3291F7B4C000644DE /* LoginViewController.swift */,
@@ -164,6 +177,7 @@
 				B9A8D79A291F696800E01F31 /* Extensions.swift */,
 				B9A8D7A6291F7C6D00E01F31 /* State.swift */,
 				B94792B32920386A00C32FE5 /* K.swift */,
+				74A23552292049DF00DDBAA6 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -268,11 +282,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */,
+				74A23553292049DF00DDBAA6 /* Constants.swift in Sources */,
 				74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */,
 				B94792B2291FB51500C32FE5 /* FoodTableViewCell.swift in Sources */,
 				B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */,
 				7435C814291F5B270084DB78 /* ViewController.swift in Sources */,
 				B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */,
+				74A2355629204BCC00DDBAA6 /* Sessions.swift in Sources */,
 				7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */,
 				B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */,
 				B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */,
@@ -430,7 +446,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJUSE27PV3;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -459,7 +475,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJUSE27PV3;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

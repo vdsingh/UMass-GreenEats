@@ -24,7 +24,7 @@ admin.initializeApp({
 });
 const db = admin.firestore();
 
-app.use(cors({ origin: true }));
+app.use(cors());
 
 app.post('/api/scrape', (req, res) => {
     fs.readFile("./data.json", "utf8", (err, jsonString) => {

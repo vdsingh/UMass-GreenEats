@@ -11,18 +11,32 @@ class DiningHallListViewController: UIViewController {
 
     @IBOutlet weak var diningHallTableView: UITableView!
     
+    var foods: [Food] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Dining Halls"
-        navigationController?.title = ""
+        navigationController?.navigationBar.topItem?.title = "Dining Halls"
         diningHallTableView.delegate = self
         diningHallTableView.dataSource = self
 //        diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
         // Do any additional setup after loading the view.
         diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
-
+        
+        fetchFoodData()
+        print(self.foods)
     }
     
+    func fetchFoodData(){
+        Task{
+            do{
+                if let foods = try await Sessions.loadFoodData(diningHall: "berkshire" , menu: "dinner_menu"){
+                    self.foods = foods
+                }
+            } catch{
+                return
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

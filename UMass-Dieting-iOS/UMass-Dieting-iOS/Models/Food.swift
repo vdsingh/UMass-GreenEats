@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Food {
+struct Food: Codable {
     let name: String
     let servingString: String
     
@@ -23,5 +23,4 @@ struct Food {
     let carbonFootprint: Int
     
     let tags: [String]
-
 }
