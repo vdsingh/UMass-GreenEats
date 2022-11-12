@@ -18,7 +18,6 @@
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
 		B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */; };
 		B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D79A291F696800E01F31 /* Extensions.swift */; };
-		B9A8D79F291F76C700E01F31 /* Auth-Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A8D79E291F76C700E01F31 /* Auth-Storyboard.storyboard */; };
 		B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */; };
 		B9A8D7A7291F7C6D00E01F31 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A6291F7C6D00E01F31 /* State.swift */; };
 		B9A8D7A9291F7C8A00E01F31 /* DiningHall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A8291F7C8A00E01F31 /* DiningHall.swift */; };
@@ -35,12 +34,10 @@
 		7435C81B291F5B290084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7435C81D291F5B290084DB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A23550291F9B8700DDBAA6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		74D267B1291F7733000644DE /* Auth-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Auth-Storyboard.storyboard"; sourceTree = "<group>"; };
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFormViewController.swift; sourceTree = "<group>"; };
 		B9A8D79A291F696800E01F31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		B9A8D79E291F76C700E01F31 /* Auth-Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Auth-Storyboard.storyboard"; sourceTree = "<group>"; };
 		B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallListViewController.swift; sourceTree = "<group>"; };
 		B9A8D7A6291F7C6D00E01F31 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		B9A8D7A8291F7C8A00E01F31 /* DiningHall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHall.swift; sourceTree = "<group>"; };
@@ -99,9 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				7435C815291F5B270084DB78 /* Main.storyboard */,
-				B9A8D79E291F76C700E01F31 /* Auth-Storyboard.storyboard */,
 				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
-				74D267B1291F7733000644DE /* Auth-Storyboard.storyboard */,
 				7435C818291F5B290084DB78 /* Assets.xcassets */,
 				B9A8D7AA291F89BB00E01F31 /* DiningHallTableViewCell.swift */,
 			);
@@ -191,7 +186,6 @@
 			files = (
 				74A23551291F9B8700DDBAA6 /* .gitignore in Resources */,
 				7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */,
-				B9A8D79F291F76C700E01F31 /* Auth-Storyboard.storyboard in Resources */,
 				7435C819291F5B290084DB78 /* Assets.xcassets in Resources */,
 				7435C817291F5B270084DB78 /* Main.storyboard in Resources */,
 			);
