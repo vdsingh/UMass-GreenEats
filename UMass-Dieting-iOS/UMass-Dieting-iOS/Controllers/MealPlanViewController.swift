@@ -19,6 +19,8 @@ class MealPlanViewController: UIViewController {
     
     @IBOutlet weak var foodsTableView: UITableView!
     @IBOutlet weak var mealTimesStack: UIStackView!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var mealTypeKeyDictionary:[String: String] = ["Lunch": "lunch_menu", "Break-fast": "breakfast_menu", "Dinner": "dinner_menu", "Late Night": "latenight_menu"]
     
@@ -61,9 +63,17 @@ class MealPlanViewController: UIViewController {
             }
         })
         
+        spinner.isHidden = false
+        errorLabel.isHidden = true
+        self.mealPlan?.foods = []
+        foodsTableView.reloadData()
         Sessions.loadFoodData(diningHall: diningHall.key, menu:  mealTypeKeyDictionary[mealType]!) {
             print("Completion called!")
+            self.spinner.isHidden = true
             self.mealPlan = MealPlan(foods: State.shared.DiningFoods[diningHall.key]?[self.mealTypeKeyDictionary[mealType]!] ?? [], calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
+            if(self.mealPlan?.foods.count == 0){
+                self.errorLabel.isHidden = false
+            }
             self.foodsTableView.reloadData()
         }
     }
