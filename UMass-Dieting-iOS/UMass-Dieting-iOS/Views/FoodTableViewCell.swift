@@ -136,12 +136,9 @@ class FoodTableViewCell: UITableViewCell {
         for view in imagesStack.subviews{
             view.removeFromSuperview()
         }
-//        print("Sustainability rating: \(sustainabilityRating)")
         configureSustainabilityImage(sustainabilityRating: food.carbon_rating ?? "")
                 
         if let tags = food.tags {
-            
-            
             if (tags.contains(K.vegTag)) {
                 let vegetarianIcon: UIImageView = UIImageView(image: K.vegetarianImage)
                 vegetarianIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -197,5 +194,4 @@ class FoodTableViewCell: UITableViewCell {
             }
         }
     }
-    
 }

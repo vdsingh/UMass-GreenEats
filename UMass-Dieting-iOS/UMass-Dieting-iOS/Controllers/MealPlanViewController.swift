@@ -10,10 +10,8 @@ import UIKit
 class MealPlanViewController: UIViewController {
     
     var selectedFood: Food? = nil
-    
     var foods: [[Food]] = [[], []]
     let headers: [String] = ["Recommended Foods", "All Foods"]
-    
     var diningHall: DiningHall!
     
     @IBOutlet weak var foodsTableView: UITableView!
@@ -34,12 +32,51 @@ class MealPlanViewController: UIViewController {
             fatalError("$ERROR: Dining hall is nil")
         }
         self.title = diningHall.name
-        selectMealType(mealType: "Break-fast", diningHall: diningHall)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        mealTimesStack.
-        selectMealType(mealType: "Break-fast", diningHall: diningHall)
+        let calendar = Calendar.current
+        let now = Date()
+        let seven_am_today = calendar.date (
+          bySettingHour: 7,
+          minute: 0,
+          second: 0,
+          of: now)!
+        
+        let eleven_am_today = calendar.date (
+            bySettingHour: 11,
+            minute: 0,
+            second: 0,
+            of: now)!
+
+        let four_thirty_pm_today = calendar.date (
+          bySettingHour: 16,
+          minute: 30,
+          second: 0,
+          of: now)!
+        
+        let nine_pm_today = calendar.date (
+          bySettingHour: 21,
+          minute: 0,
+          second: 0,
+          of: now)!
+        
+        let midnight_today = calendar.date (
+            bySettingHour: 23,
+            minute: 59,
+            second: 59,
+            of: now)!
+        
+        if(Date() >= seven_am_today && Date() <= eleven_am_today) {
+            selectMealType(mealType: "Break-fast", diningHall: diningHall)
+        } else if(Date() > eleven_am_today && Date() <= four_thirty_pm_today) {
+            selectMealType(mealType: "Lunch", diningHall: diningHall)
+        } else if(Date() > four_thirty_pm_today && Date() < nine_pm_today) {
+            selectMealType(mealType: "Lunch", diningHall: diningHall)
+        } else {
+            selectMealType(mealType: "Late Night", diningHall: diningHall)
+        }
+
     }
     
     @IBAction func newTimeClicked(_ sender: UIButton) {

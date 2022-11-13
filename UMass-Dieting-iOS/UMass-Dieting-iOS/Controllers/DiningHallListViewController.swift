@@ -21,8 +21,6 @@ class DiningHallListViewController: UIViewController {
         diningHallTableView.dataSource = self
 
         diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
-
-//        loadData(diningHall: "berkshire", menu: "dinner_menu")
     }
     
 }

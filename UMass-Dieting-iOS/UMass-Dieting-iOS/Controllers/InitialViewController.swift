@@ -7,9 +7,7 @@
 
 import UIKit
 class InitialViewController: UINavigationController {
-    
     var userDefaults = UserDefaults.standard
-    
     var launchImageView: UIImageView?
     var nextButton: UIButton?
     

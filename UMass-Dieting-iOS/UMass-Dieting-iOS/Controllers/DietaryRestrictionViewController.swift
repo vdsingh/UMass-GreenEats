@@ -87,8 +87,5 @@ class DietaryRestrictionViewController: UIViewController {
         }
         
         userDefaults.set(dietaryRestrictions, forKey: K.dietaryTagsKey)
-
     }
-    
-    
 }
