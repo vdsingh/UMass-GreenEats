@@ -1,8 +1,12 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from datetime import datetime
 import json
 
+options = Options()
+options.headless = True
+driver = webdriver.Chrome(options=options)
 
 def get_food(food_items, food_list):
     for food in food_items:
@@ -14,11 +18,11 @@ def get_food(food_items, food_list):
             except Exception as a:
                 pass
 
-            healthfulness = data.get_attribute('data-healthfulness')
+            healthfulness = data.get_attribute('data-healthfulness')[:-1]
             try:
-                healthfulness = str(healthfulness)
+                healthfulness = int(healthfulness)
             except Exception as a:
-                pass
+                healthfulness = -1
         
             carbon_rating = data.get_attribute('data-carbon-list')
             try:
@@ -45,7 +49,7 @@ def get_food(food_items, food_list):
             try:
                 trans_fat = float(trans_fat)
             except Exception as a:
-                pass
+                trans_fat = -1.0
 
             cholesterol = float(data.get_attribute('data-cholesterol')[:-2])
             sodium = float(data.get_attribute('data-sodium')[:-2])
@@ -55,7 +59,7 @@ def get_food(food_items, food_list):
             try:
                 sugar = float(sugar)
             except Exception as a:
-                pass
+                sugar = -1.0
 
             protein = float(data.get_attribute('data-protein')[:-1])
             dish_name = str(data.get_attribute('data-dish-name'))
@@ -91,10 +95,6 @@ def get_food(food_items, food_list):
 
 
 def main():
-    options = webdriver.FirefoxOptions()
-    options.headless = True
-    driver = webdriver.Firefox(executable_path="geckodriver", options=options)
-    
     
     # not_found = True
     # while not_found:
