@@ -12,13 +12,17 @@ class MealPlanViewController: UIViewController {
     var selectedFood: Food? = nil
     
     var mealPlan: MealPlan? = MealPlan(foods: [
-//        Food(name: "Chicken", servingString: "16oz", servingSize: "2oz", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 1, tags: []),
-//        Food(name: "Broccoli", servingString: "16oz", servingSize: "3 Pieces", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 2, tags: ["vegetarian"]),
-//        Food(name: "Rice", servingString: "16oz", servingSize: "15 Grains", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 3, tags: ["vegetarian", "local"])
+
     ], calories: 25, saturatedFat: 30, transFat: 35, cholesterol: 40, sodium: 20, total_carbs: 20, dietary_fiber: 30, sugars: 20, protein: 20)
+    
+    var diningHall: DiningHall!
     
     @IBOutlet weak var foodsTableView: UITableView!
     @IBOutlet weak var mealTimesStack: UIStackView!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    var mealTypeKeyDictionary:[String: String] = ["Lunch": "lunch_menu", "Break-fast": "breakfast_menu", "Dinner": "dinner_menu", "Late Night": "latenight_menu"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +31,23 @@ class MealPlanViewController: UIViewController {
         foodsTableView.dataSource = self
         foodsTableView.register(FoodTableViewCell.self, forCellReuseIdentifier: FoodTableViewCell.reuseIdentifier)
         
-        selectMealType(mealType: "Break-fast")
-        
- 
-        
-//        mealPlanTableView.reloadData()
+        guard let diningHall = self.diningHall else {
+            fatalError("$ERROR: Dining hall is nil")
+        }
+        self.title = diningHall.name
+        selectMealType(mealType: "Break-fast", diningHall: diningHall)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        mealTimesStack.
+        selectMealType(mealType: "Break-fast", diningHall: diningHall)
     }
     
     @IBAction func newTimeClicked(_ sender: UIButton) {
-        selectMealType(mealType: sender.titleLabel?.text ?? "")
+        selectMealType(mealType: sender.titleLabel?.text ?? "", diningHall: self.diningHall)
     }
     
-    func selectMealType(mealType: String) {
+    func selectMealType(mealType: String, diningHall: DiningHall) {
         mealTimesStack.arrangedSubviews.forEach({
             let button = $0 as! UIButton
             if(button.titleLabel?.text == mealType) {
@@ -47,12 +56,26 @@ class MealPlanViewController: UIViewController {
                 button.tintColor = .white
             } else {
                 button.backgroundColor = .systemBackground
-                button.titleLabel?.textColor = .link
+                button.tintColor = .link
                 button.layer.borderColor = UIColor.link.cgColor
                 button.layer.cornerRadius = 10
                 button.layer.borderWidth = 1
             }
         })
+        
+        spinner.isHidden = false
+        errorLabel.isHidden = true
+        self.mealPlan?.foods = []
+        foodsTableView.reloadData()
+        Sessions.loadFoodData(diningHall: diningHall.key, menu:  mealTypeKeyDictionary[mealType]!) {
+            print("Completion called!")
+            self.spinner.isHidden = true
+            self.mealPlan = MealPlan(foods: State.shared.DiningFoods[diningHall.key]?[self.mealTypeKeyDictionary[mealType]!] ?? [], calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
+            if(self.mealPlan?.foods.count == 0){
+                self.errorLabel.isHidden = false
+            }
+            self.foodsTableView.reloadData()
+        }
     }
 }
 

@@ -25,7 +25,7 @@ class UserInfoFormViewController: UIViewController {
     private var activityLevel: String = "Select an Activity Level"
     private var goal: String = "Select your Goal"
     
-    
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,7 @@ class UserInfoFormViewController: UIViewController {
     
     func configurePopUpButtons() {
         let genderSelectionClosure = { (action: UIAction) in
+            self.userDefaults.set(action.title, forKey: K.genderKey)
             self.gender = action.title
             self.renderNextButton()
         }
@@ -57,6 +58,7 @@ class UserInfoFormViewController: UIViewController {
         
         let activitySelectionClosure = { (action: UIAction) in
             self.activityLevel = action.title
+            self.userDefaults.set(action.title, forKey: K.activityLevelKey)
             self.renderNextButton()
         }
         activityLevelPopUpButton.menu = UIMenu(children: [
@@ -71,6 +73,7 @@ class UserInfoFormViewController: UIViewController {
         activityLevelPopUpButton.changesSelectionAsPrimaryAction = true
         
         let goalSelectionClosure = { (action: UIAction) in
+            self.userDefaults.set(action.title, forKey: K.goalKey)
             self.goal = action.title
             self.renderNextButton()
         }
@@ -86,12 +89,12 @@ class UserInfoFormViewController: UIViewController {
     }
     
     private func renderNextButton() {
-        print("RENDERING NEXT BUTTON")
         if(gender != "Select a Gender" &&
            activityLevel != "Select an Activity Level" &&
            goal != "Select your Goal" &&
            verifyNumberFields()
         ) {
+            userDefaults.set(calculateCalories(), forKey: K.caloriesKey)
             nextButton.isEnabled = true
         } else {
             nextButton.isEnabled = false
@@ -99,9 +102,11 @@ class UserInfoFormViewController: UIViewController {
     }
     
     private func verifyNumberFields() -> Bool {
-        print("VERIFYING NUMBER FIELDS")
         if let ageText = ageTextField.text, let heightText = heightTextField.text, let bodyweightText = bodyweightTextField.text {
-            print("NUMBER FIELDS: \(ageText.isNumber && heightText.isNumber && bodyweightText.isNumber)")
+            userDefaults.set(heightText, forKey: K.heightKey)
+            userDefaults.set(ageText, forKey: K.ageKey)
+            userDefaults.set(bodyweightText, forKey: K.weightKey)
+
             return ageText.isNumber && heightText.isNumber && bodyweightText.isNumber
         } else {
             fatalError("$ERROR: Textfield texts are nil.")
@@ -110,6 +115,39 @@ class UserInfoFormViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+//    For men: BMR = 66.5 + (13.75 * weight in kg) + (5.003 * height in cm) - (6.75 * age)
+//
+//    For women: BMR = 655.1 + (9.563 * weight in kg) + (1.850 * height in cm) - (4.676 * age)
+    
+    private func calculateCalories() -> Float {
+        if(!verifyNumberFields()) {
+            return -1
+        }
+        let weightKG = (bodyweightTextField.text!.floatValue) * (1/2.20462)
+        let heightCM = Float(heightTextField.text!.floatValue) * (1/0.393701)
+        let ageYears = Float(ageTextField.text!.floatValue)
+        var BMR: Float = 0
+        if(gender == "male") {
+            BMR = 66.5 + (13.75 * weightKG) + (5.003 * heightCM) - (6.75 * ageYears)
+        } else {
+            BMR = 655.1 + (9.563 * weightKG) + (1.850 * heightCM) - (4.676 * ageYears)
+        }
+
+        switch activityLevel {
+        case "Not Active":
+            return BMR * 1.2
+        case "Somewhat Active":
+            return BMR * 1.375
+        case "Moderately Active":
+            return BMR * 1.55
+        case "Very Active":
+            return BMR * 1.725
+        default:
+            print("$ERROR: Activity level not selected")
+            return 2000
+        }
     }
 }
 
@@ -120,7 +158,6 @@ extension UserInfoFormViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("TEXTFIELD DID END EDITING")
         textField.resignFirstResponder()
         renderNextButton()
     }

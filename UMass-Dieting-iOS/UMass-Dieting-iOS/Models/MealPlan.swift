@@ -7,16 +7,16 @@
 
 import Foundation
 struct MealPlan {
-    let foods: [Food]
+    var foods: [Food]
     
-    let calories: Float32
-    let saturatedFat: Float32
-    let transFat: Float32
-    let cholesterol: Float32
-    let sodium: Float32
-    let total_carbs: Float32
-    let dietary_fiber: Float32
-    let sugars: Float32
-    let protein: Float32
+    var calories: Float32
+    var saturatedFat: Float32
+    var transFat: Float32
+    var cholesterol: Float32
+    var sodium: Float32
+    var total_carbs: Float32
+    var dietary_fiber: Float32
+    var sugars: Float32
+    var protein: Float32
 
 }

@@ -8,6 +8,7 @@
 import Foundation
 struct DiningHall {
     let name: String
+    let key: String
     let daysOfOperation: String
     let hoursOfOperation: String
 }

@@ -7,29 +7,39 @@
 
 import Foundation
 
-class Sessions{
-    static func loadFoodData(diningHall: String, menu: String)  async -> [Food]? {
+class Sessions {
+    
+    static var dataTask: URLSessionDataTask?
+    
+    public static func loadFoodData(diningHall: String, menu: String, completion: @escaping () -> Void){
         
-        struct Response: Codable {
-            var foods: [Food]
+        if((State.shared.DiningFoods[diningHall]?[menu]?.count)! > 0){
+            completion()
+            return
         }
         
-        guard let url = URL(string: "\(Constants.API.API_URL)api/foods/get/berkshire/dinner_menu") else {
-            print("url not found")
-            return nil
+        guard let url = URL(string: "\(Constants.API.API_URL)api/foods/get/\(diningHall)/\(menu)") else {
+            print("$ERROR: url not found")
+            return
         }
-        
-        do{
-            let (data, _) = try await URLSession.shared.data(from: url)
-            
-            if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data){
                 
-                return decodedResponse.foods
+        dataTask?.cancel()
+        dataTask = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            guard let data = data else {
+                return
             }
-        }
-        catch{
-            print("invvalid data")
-        }
-        return nil
+            do {
+                let decodedData = try JSONDecoder().decode([Food].self, from: data)
+                    DispatchQueue.main.async {
+                        State.shared.DiningFoods[diningHall]?[menu] = decodedData
+                        completion()
+                    }
+            } catch let jsonError as NSError {
+                print("$ERROR: \(jsonError)")
+                print(String(describing: jsonError))
+                print(jsonError.localizedDescription)
+            }
+        })
+        dataTask?.resume()
     }
 }
