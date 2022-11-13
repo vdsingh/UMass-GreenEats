@@ -6,25 +6,28 @@
 //
 
 import Foundation
-struct Food {
-    let name: String
-    let servingString: String
-    
-    let servingSize: String
-    let calories: Float32
-    let fatCal: Float32
-    let totalFat: Float32
-    let saturatedFat: Float32
-    let transFat: Float32
-    let cholesterol: Float32
-    let sodium: Float32
-    let totalCarbs: Float32
-    let dietaryFiber: Float32
-    let sugars: Float32
-    let protein: Float32
-    
-    let carbonFootprint: Int
-    
-    let tags: [String]
+struct Food: Codable {
+    var dish_name: String?
+    var servingString: String?
 
+    var serving_size: String?
+    var calories: Float?
+    var fatCal: Float?
+    var total_fat: Float?
+    var sat_fat: Float?
+    var trans_fat: String?
+    var cholesterol: Float?
+    var sodium: Float?
+    var total_carbs: Float?
+    var dietary_fiber: Float?
+    var sugar: Float?
+    var protein: Float?
+
+    var healthfulness: String?
+    var carbon_rating: String?
+    
+    var ingredients: String?
+    var allergens: String?
+    
+    var tags: String?
 }

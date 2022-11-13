@@ -12,20 +12,20 @@ class DiningHallTableViewCell: UITableViewCell {
     
     var diningHallTitleLabel: UILabel = {
         let diningHallTitleLabel = UILabel()
-//        diningHallTitleLabel.attributedText =
+        diningHallTitleLabel.textColor = .white
         return diningHallTitleLabel
     }()
     
     var hoursOfOperationLabel: UILabel = {
         let hoursOfOperationLabel = UILabel()
-        
+        hoursOfOperationLabel.textColor = .white
         return hoursOfOperationLabel
         
     }()
     
     var daysOfOperationLabel: UILabel = {
         let daysOfOperationLabel = UILabel()
-//        daysOfOperationLabel
+        daysOfOperationLabel.textColor = .white
         return daysOfOperationLabel
     }()
     

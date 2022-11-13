@@ -12,9 +12,9 @@ class MealPlanViewController: UIViewController {
     var selectedFood: Food? = nil
     
     var mealPlan: MealPlan? = MealPlan(foods: [
-        Food(name: "Chicken", servingString: "16oz", servingSize: "2oz", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 1, tags: []),
-        Food(name: "Broccoli", servingString: "16oz", servingSize: "3 Pieces", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 2, tags: ["vegetarian"]),
-        Food(name: "Rice", servingString: "16oz", servingSize: "15 Grains", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 3, tags: ["vegetarian", "local"])
+//        Food(name: "Chicken", servingString: "16oz", servingSize: "2oz", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 1, tags: []),
+//        Food(name: "Broccoli", servingString: "16oz", servingSize: "3 Pieces", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 2, tags: ["vegetarian"]),
+//        Food(name: "Rice", servingString: "16oz", servingSize: "15 Grains", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 3, tags: ["vegetarian", "local"])
     ], calories: 25, saturatedFat: 30, transFat: 35, cholesterol: 40, sodium: 20, total_carbs: 20, dietary_fiber: 30, sugars: 20, protein: 20)
     
     @IBOutlet weak var foodsTableView: UITableView!
