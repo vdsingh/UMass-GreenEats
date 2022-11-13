@@ -24,13 +24,11 @@ class UserPreferencesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< HEAD
         let recBody = RecommendationBody.init(tag_preferences: [], recommended_calories: 3000, dining_hall: "berkshire", menu: "dinner_menu")
         
-        Sessions.loadRecommendation(recommendationBody: recBody)
-
-=======
->>>>>>> b799b49688bc09021bae4e5dda5eeb18f1754901
+        Sessions.loadRecommendation(recommendationBody: recBody) {
+            
+        }
         // Do any additional setup after loading the view.
     }
     
