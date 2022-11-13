@@ -12,9 +12,9 @@ class FoodTableViewCell: UITableViewCell {
     private let iconSize: CGFloat = 30
     var food: Food? = nil {
         didSet {
-            foodTitle.attributedText = food?.name.withBoldText(text: food?.name ?? "", fontSize: 18)
+            foodTitle.attributedText = food?.dish_name!.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
             foodSubTitle.text = food?.servingString
-            configureSustainabilityImage(sustainabilityRating: food?.carbonFootprint ?? 0)
+            configureSustainabilityImage(sustainabilityRating: food?.carbon_rating ?? "Unknown")
             loadTagImages()
 //            sustainabilityImage
         }
@@ -99,25 +99,25 @@ class FoodTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSustainabilityImage(sustainabilityRating: Int) {
+    private func configureSustainabilityImage(sustainabilityRating: String) {
         switch sustainabilityRating {
-        case 1:
+        case "A":
             sustainabilityImage.image = UIImage(systemName: "a.circle.fill")
             sustainabilityImage.tintColor = .systemGreen
             return
-        case 2:
+        case "B":
             sustainabilityImage.image = UIImage(systemName: "b.circle.fill")
             sustainabilityImage.tintColor = UIColor(hexString: "#61a32f")
             return
-        case 3:
+        case "C":
             sustainabilityImage.image = UIImage(systemName: "c.circle.fill")
             sustainabilityImage.tintColor = .systemYellow
             return
-        case 4:
+        case "D":
             sustainabilityImage.image = UIImage(systemName: "d.circle.fill")
             sustainabilityImage.tintColor = .systemOrange
             return
-        case 5:
+        case "E":
             sustainabilityImage.image = UIImage(systemName: "e.circle.fill")
             sustainabilityImage.tintColor = .systemRed
             return
@@ -133,22 +133,25 @@ class FoodTableViewCell: UITableViewCell {
             fatalError("$ERROR: Food is nil")
         }
         
-        if (food.tags.contains("vegetarian")) {
-            let vegetarianIcon: UIImageView = UIImageView(image: K.vegetarianImage)
-            vegetarianIcon.tintColor = .systemGreen
-            imagesStack.addArrangedSubview(vegetarianIcon)
-            vegetarianIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-            vegetarianIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            print("FOOD IS VEGETARIAN")
-        }
-        
-        if (food.tags.contains("local")) {
-            let localIcon: UIImageView = UIImageView(image: K.localImage)
-            localIcon.tintColor = .systemYellow
-            imagesStack.addArrangedSubview(localIcon)
-            localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-            localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-//            print("FOOD IS VEGETARIAN")
+        if let tags = food.tags {
+            
+            if (tags.contains("vegetarian")) {
+                let vegetarianIcon: UIImageView = UIImageView(image: K.vegetarianImage)
+                vegetarianIcon.tintColor = .systemGreen
+                imagesStack.addArrangedSubview(vegetarianIcon)
+                vegetarianIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+                vegetarianIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+                print("FOOD IS VEGETARIAN")
+            }
+            
+            if (tags.contains("local")) {
+                let localIcon: UIImageView = UIImageView(image: K.localImage)
+                localIcon.tintColor = .systemYellow
+                imagesStack.addArrangedSubview(localIcon)
+                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+                //            print("FOOD IS VEGETARIAN")
+            }
         }
     }
     

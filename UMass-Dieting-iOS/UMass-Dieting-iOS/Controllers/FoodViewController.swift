@@ -43,20 +43,20 @@ class FoodViewController: UIViewController {
             fatalError("$ERROR: Food is nil.")
         }
         
-        foodNameLabel.text = "\(food.name)"
+        foodNameLabel.text = "\(food.dish_name)"
         
-        servingSizeLabel.text = "\(food.servingSize)"
-        caloriesNumberLabel.text = "\(food.calories)"
-        fatCalLabel.text = "\(food.fatCal)"
-        totalFatNumberLabel.text = "\(food.totalFat)"
-        saturatedFatNumberLabel.text = "\(food.saturatedFat)"
-        transFatNumberLabel.text = "\(food.transFat)"
-        cholesterolNumberLabel.text = "\(food.cholesterol)"
-        sodiumNumberLabel.text = "\(food.sodium)"
-        carbohydratesNumberLabel.text = "\(food.totalCarbs)"
-        dietaryFiberNumberLabel.text = "\(food.dietaryFiber)"
-        sugarNumberLabel.text = "\(food.sugars)"
-        proteinNumberLabel.text = "\(food.protein)"
+        servingSizeLabel.text = "\(food.serving_size ?? "")"
+        caloriesNumberLabel.text = "\(food.calories ?? -1)"
+        fatCalLabel.text = "\(food.fatCal ?? -1)"
+        totalFatNumberLabel.text = "\(food.total_fat ?? -1)"
+        saturatedFatNumberLabel.text = "\(food.sat_fat ?? -1)"
+        transFatNumberLabel.text = "\(food.trans_fat ?? "")"
+        cholesterolNumberLabel.text = "\(food.cholesterol ?? -1)"
+        sodiumNumberLabel.text = "\(food.sodium ?? -1)"
+        carbohydratesNumberLabel.text = "\(food.total_carbs ?? -1)"
+        dietaryFiberNumberLabel.text = "\(food.dietary_fiber ?? -1)"
+        sugarNumberLabel.text = "\(food.sugar ?? -1)"
+        proteinNumberLabel.text = "\(food.protein ?? -1)"
     }
     
     
