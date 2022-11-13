@@ -25,6 +25,8 @@ class K {
     static let wholeGrainTag = "con-whlgrn"
     static let antibioticFreeTag = "con-antibfr"
     
+    static let tagMap: [String: String] = [vegTag: "Vegetarian", halalTag: "Halal", localTag: "Local", sustainableTag: "Sustainable", wholeGrainTag: "Whole Grain", antibioticFreeTag: "Antibiotic Free"]
+    
     //User Info Keys:
     static let genderKey = "gender"
     static let weightKey = "weight"
@@ -34,4 +36,6 @@ class K {
     
     static let goalKey = "goal"
     static let activityLevelKey = "activity-level"
+    
+    static let orangeColorHex = "FEA42E"
 }
