@@ -43,6 +43,8 @@ Most importantly, users can see the total amount of carbon dioxide emissions (gC
 
 To do this, our team did extensive research into UMass Dining’s sustainability provider, MyEmissions (https://myemissions.green/), and reverse engineered the carbon footprint rating from their website to calculate an estimation of the average carbon dioxide emission (gCO2e) per food serving. 
 
+<img src="./images/carbon-footprint.jpeg" height="500px">
+
 ## How we built it 👨‍💻
 
 Our system has a lot of moving parts, so stick with us.
