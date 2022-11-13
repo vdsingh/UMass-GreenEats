@@ -12,11 +12,11 @@ class FoodTableViewCell: UITableViewCell {
     private let iconSize: CGFloat = 30
     var food: Food? = nil {
         didSet {
-            foodTitle.attributedText = food?.dish_name!.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
-            foodSubTitle.text = food?.servingString
+            foodTitle.attributedText = food?.dish_name?.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
+            foodSubTitle.text = "TEST TEXT"
             configureSustainabilityImage(sustainabilityRating: food?.carbon_rating ?? "Unknown")
             loadTagImages()
-//            sustainabilityImage
+            //            sustainabilityImage
         }
     }
     
@@ -53,7 +53,7 @@ class FoodTableViewCell: UITableViewCell {
         labelsStack.translatesAutoresizingMaskIntoConstraints = false
         labelsStack.axis = .vertical
         labelsStack.distribution = .fillProportionally
-//        labelsStack.alignment = .center
+        //        labelsStack.alignment = .center
         labelsStack.spacing = 0
         return labelsStack
     }()
@@ -71,7 +71,7 @@ class FoodTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(leftStack)
-
+        
         leftStack.addArrangedSubview(imagesStack)
         leftStack.addArrangedSubview(labelsStack)
         
@@ -89,7 +89,7 @@ class FoodTableViewCell: UITableViewCell {
         
         leftStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         leftStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10).isActive = true
-
+        
         leftStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         

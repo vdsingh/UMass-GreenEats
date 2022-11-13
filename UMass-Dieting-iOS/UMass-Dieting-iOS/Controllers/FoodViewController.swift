@@ -47,7 +47,6 @@ class FoodViewController: UIViewController {
         
         servingSizeLabel.text = "\(food.serving_size ?? "")"
         caloriesNumberLabel.text = "\(food.calories ?? -1)"
-        fatCalLabel.text = "\(food.fatCal ?? -1)"
         totalFatNumberLabel.text = "\(food.total_fat ?? -1)"
         saturatedFatNumberLabel.text = "\(food.sat_fat ?? -1)"
         transFatNumberLabel.text = "\(food.trans_fat ?? -1)"
@@ -55,7 +54,7 @@ class FoodViewController: UIViewController {
         sodiumNumberLabel.text = "\(food.sodium ?? -1)"
         carbohydratesNumberLabel.text = "\(food.total_carbs ?? -1)"
         dietaryFiberNumberLabel.text = "\(food.dietary_fiber ?? -1)"
-        sugarNumberLabel.text = "\(food.sugar ?? -1)"
+        sugarNumberLabel.text = ""
         proteinNumberLabel.text = "\(food.protein ?? -1)"
     }
     

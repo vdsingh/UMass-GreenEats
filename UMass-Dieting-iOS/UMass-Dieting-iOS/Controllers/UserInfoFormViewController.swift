@@ -25,7 +25,7 @@ class UserInfoFormViewController: UIViewController {
     private var activityLevel: String = "Select an Activity Level"
     private var goal: String = "Select your Goal"
     
-    
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,7 @@ class UserInfoFormViewController: UIViewController {
     
     func configurePopUpButtons() {
         let genderSelectionClosure = { (action: UIAction) in
+            self.userDefaults.set(action.title, forKey: K.genderKey)
             self.gender = action.title
             self.renderNextButton()
         }
@@ -57,6 +58,7 @@ class UserInfoFormViewController: UIViewController {
         
         let activitySelectionClosure = { (action: UIAction) in
             self.activityLevel = action.title
+            self.userDefaults.set(action.title, forKey: K.activityLevelKey)
             self.renderNextButton()
         }
         activityLevelPopUpButton.menu = UIMenu(children: [
@@ -71,6 +73,7 @@ class UserInfoFormViewController: UIViewController {
         activityLevelPopUpButton.changesSelectionAsPrimaryAction = true
         
         let goalSelectionClosure = { (action: UIAction) in
+            self.userDefaults.set(action.title, forKey: K.goalKey)
             self.goal = action.title
             self.renderNextButton()
         }
@@ -86,7 +89,6 @@ class UserInfoFormViewController: UIViewController {
     }
     
     private func renderNextButton() {
-        print("RENDERING NEXT BUTTON")
         if(gender != "Select a Gender" &&
            activityLevel != "Select an Activity Level" &&
            goal != "Select your Goal" &&
@@ -99,9 +101,11 @@ class UserInfoFormViewController: UIViewController {
     }
     
     private func verifyNumberFields() -> Bool {
-        print("VERIFYING NUMBER FIELDS")
         if let ageText = ageTextField.text, let heightText = heightTextField.text, let bodyweightText = bodyweightTextField.text {
-            print("NUMBER FIELDS: \(ageText.isNumber && heightText.isNumber && bodyweightText.isNumber)")
+            userDefaults.set(heightText, forKey: K.heightKey)
+            userDefaults.set(ageText, forKey: K.ageKey)
+            userDefaults.set(bodyweightText, forKey: K.weightKey)
+
             return ageText.isNumber && heightText.isNumber && bodyweightText.isNumber
         } else {
             fatalError("$ERROR: Textfield texts are nil.")
@@ -120,7 +124,6 @@ extension UserInfoFormViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("TEXTFIELD DID END EDITING")
         textField.resignFirstResponder()
         renderNextButton()
     }

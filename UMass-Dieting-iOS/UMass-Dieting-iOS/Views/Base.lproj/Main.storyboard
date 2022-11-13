@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oJk-ma-gAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xc2-z3-IXp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -136,7 +136,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Next"/>
                                         <connections>
-                                            <segue destination="oJk-ma-gAM" kind="showDetail" id="cqt-VQ-reX"/>
+                                            <segue destination="opM-d9-oFU" kind="show" id="ZrP-5h-nZ7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -164,7 +164,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ga-FJ-5RN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2025" y="932"/>
+            <point key="canvasLocation" x="-3123" y="931"/>
+        </scene>
+        <!--Dietary Restriction View Controller-->
+        <scene sceneID="bgt-Cv-xS0">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="opM-d9-oFU" customClass="DietaryRestrictionViewController" customModule="UMass_Dieting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p3d-E8-uJA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CUJ-vp-HUs">
+                                <rect key="frame" x="20" y="319.5" width="374" height="257"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWA-ml-lmX">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Vegetarian"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="opM-d9-oFU" eventType="touchUpInside" id="yFr-R5-mmW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpK-io-5hb">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Halal"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="opM-d9-oFU" eventType="touchUpInside" id="OBk-qe-k75"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xj4-PB-lAx">
+                                        <rect key="frame" x="0.0" y="89" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Local-Only"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="opM-d9-oFU" eventType="touchUpInside" id="GbG-sH-Xpe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCV-1m-Ycu">
+                                        <rect key="frame" x="0.0" y="133.5" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sustainable"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="opM-d9-oFU" eventType="touchUpInside" id="cIU-DL-fto"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwP-1C-tki">
+                                        <rect key="frame" x="0.0" y="178" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Whole Grain"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="opM-d9-oFU" eventType="touchUpInside" id="Z98-DM-VN5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cd-8q-XwB">
+                                        <rect key="frame" x="0.0" y="222.5" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Antibiotic-Free"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="opM-d9-oFU" eventType="touchUpInside" id="lQh-H1-ng5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select any Dietary Restrictions:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfB-Hc-5I9">
+                                <rect key="frame" x="40" y="88" width="334" height="72"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4w-M2-OJF">
+                                <rect key="frame" x="20" y="767.5" width="374" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="opM-d9-oFU" eventType="touchUpInside" id="kDC-Xj-Ukg"/>
+                                    <segue destination="oJk-ma-gAM" kind="showDetail" id="oT5-tt-IDr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Aac-Nc-IRe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CUJ-vp-HUs" firstAttribute="centerY" secondItem="p3d-E8-uJA" secondAttribute="centerY" id="1U0-tu-qSu"/>
+                            <constraint firstItem="Aac-Nc-IRe" firstAttribute="bottom" secondItem="L4w-M2-OJF" secondAttribute="bottom" constant="60" id="6kK-No-yHW"/>
+                            <constraint firstItem="CUJ-vp-HUs" firstAttribute="leading" secondItem="Aac-Nc-IRe" secondAttribute="leading" constant="20" id="KXn-Vl-n4Y"/>
+                            <constraint firstItem="Aac-Nc-IRe" firstAttribute="trailing" secondItem="L4w-M2-OJF" secondAttribute="trailing" constant="20" id="KdS-7h-Z5d"/>
+                            <constraint firstItem="L4w-M2-OJF" firstAttribute="leading" secondItem="Aac-Nc-IRe" secondAttribute="leading" constant="20" id="MmG-m0-8Nq"/>
+                            <constraint firstItem="Aac-Nc-IRe" firstAttribute="trailing" secondItem="DfB-Hc-5I9" secondAttribute="trailing" constant="40" id="P2A-9f-wCG"/>
+                            <constraint firstItem="DfB-Hc-5I9" firstAttribute="leading" secondItem="Aac-Nc-IRe" secondAttribute="leading" constant="40" id="Q3T-8M-0hk"/>
+                            <constraint firstItem="DfB-Hc-5I9" firstAttribute="top" secondItem="Aac-Nc-IRe" secondAttribute="top" constant="40" id="Rya-Nc-Mnk"/>
+                            <constraint firstItem="CUJ-vp-HUs" firstAttribute="centerX" secondItem="p3d-E8-uJA" secondAttribute="centerX" id="eTd-WZ-RIc"/>
+                            <constraint firstItem="Aac-Nc-IRe" firstAttribute="trailing" secondItem="CUJ-vp-HUs" secondAttribute="trailing" constant="20" id="hhT-cz-ROh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="00y-Sn-RFh"/>
+                    <connections>
+                        <outlet property="buttonStack" destination="CUJ-vp-HUs" id="Sxw-Rd-fOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tLN-kw-0K5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2086.9565217391305" y="930.80357142857133"/>
         </scene>
         <!--Settings-->
         <scene sceneID="vt8-Ge-o6G">
