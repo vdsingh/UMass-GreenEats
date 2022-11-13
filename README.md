@@ -1,10 +1,13 @@
 # UMass-Dieting
 
+<div>
 <img src="./images/launch-screen.jpg" height="500px">
 
 <img src="./images/recommended.jpeg" height="500px">
 
 <img src="./images/user-info.jpeg" height="500px">
+
+</div>
 
 ## Inspiration 🍃
 Human activity in the last 500 years has brought extinction upon more than 800 species. 
