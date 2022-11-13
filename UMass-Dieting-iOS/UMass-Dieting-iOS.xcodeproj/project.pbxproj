@@ -30,6 +30,7 @@
 		B94792B42920386A00C32FE5 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792B32920386A00C32FE5 /* K.swift */; };
 		B94792BC2920489000C32FE5 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792BB2920489000C32FE5 /* FoodViewController.swift */; };
 		B94792BE2920806300C32FE5 /* DietaryRestrictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792BD2920806300C32FE5 /* DietaryRestrictionViewController.swift */; };
+		B95711DB2920E897003255D9 /* LaunchScreenGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = B95711DA2920E897003255D9 /* LaunchScreenGIF.gif */; };
 		B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */; };
 		B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D79A291F696800E01F31 /* Extensions.swift */; };
 		B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */; };
@@ -65,6 +66,7 @@
 		B94792B32920386A00C32FE5 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		B94792BB2920489000C32FE5 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		B94792BD2920806300C32FE5 /* DietaryRestrictionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryRestrictionViewController.swift; sourceTree = "<group>"; };
+		B95711DA2920E897003255D9 /* LaunchScreenGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = LaunchScreenGIF.gif; path = ../../../../../../Downloads/LaunchScreenGIF.gif; sourceTree = "<group>"; };
 		B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFormViewController.swift; sourceTree = "<group>"; };
 		B9A8D79A291F696800E01F31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallListViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		B9A8D795291F5BB400E01F31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B95711DA2920E897003255D9 /* LaunchScreenGIF.gif */,
 				7435C815291F5B270084DB78 /* Main.storyboard */,
 				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
 				7435C818291F5B290084DB78 /* Assets.xcassets */,
@@ -179,7 +182,7 @@
 				B94792BB2920489000C32FE5 /* FoodViewController.swift */,
 				B94792BD2920806300C32FE5 /* DietaryRestrictionViewController.swift */,
 				74A235572920AAE000DDBAA6 /* UserPreferencesViewController.swift */,
-				74A235592920C50200DDBAA6 /* IntialViewController.swift */,
+				74A235592920C50200DDBAA6 /* InitialViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */,
 				7435C819291F5B290084DB78 /* Assets.xcassets in Resources */,
 				B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */,
+				B95711DB2920E897003255D9 /* LaunchScreenGIF.gif in Resources */,
 				7435C817291F5B270084DB78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +322,7 @@
 				B94792B42920386A00C32FE5 /* K.swift in Sources */,
 				B9A8D7AB291F89BB00E01F31 /* DiningHallTableViewCell.swift in Sources */,
 				B9A8D7A7291F7C6D00E01F31 /* State.swift in Sources */,
-				74A2355A2920C50200DDBAA6 /* IntialViewController.swift in Sources */,
+				74A2355A2920C50200DDBAA6 /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
