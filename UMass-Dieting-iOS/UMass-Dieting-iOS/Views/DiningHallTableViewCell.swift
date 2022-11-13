@@ -68,15 +68,15 @@ class DiningHallTableViewCell: UITableViewCell {
         infoStackView.addArrangedSubview(hoursOfOperationLabel)
         infoStackView.addArrangedSubview(daysOfOperationLabel)
         
-        contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 100).isActive = true
+
         
         infoStackView.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 20).isActive = true
         infoStackView.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
         
         container.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         container.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        container.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        container.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

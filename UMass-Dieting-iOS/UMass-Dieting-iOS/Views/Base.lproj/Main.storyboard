@@ -688,8 +688,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-VE-fIR">
-                                <rect key="frame" x="20" y="88" width="115" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicken" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-VE-fIR">
+                                <rect key="frame" x="20" y="88" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1005,6 +1005,7 @@
                         <constraints>
                             <constraint firstItem="rbB-02-W79" firstAttribute="trailing" secondItem="CGc-eH-qaL" secondAttribute="trailing" constant="20" id="4N4-zS-2Ah"/>
                             <constraint firstItem="bbV-VE-fIR" firstAttribute="leading" secondItem="rbB-02-W79" secondAttribute="leading" constant="20" id="7QN-6A-NMp"/>
+                            <constraint firstItem="rbB-02-W79" firstAttribute="trailing" secondItem="bbV-VE-fIR" secondAttribute="trailing" constant="20" id="E2h-xb-5zQ"/>
                             <constraint firstItem="Qe1-j3-2aN" firstAttribute="top" secondItem="CGc-eH-qaL" secondAttribute="bottom" constant="10" id="FyN-hO-V0y"/>
                             <constraint firstItem="Qe1-j3-2aN" firstAttribute="leading" secondItem="rbB-02-W79" secondAttribute="leading" constant="40" id="HBE-oG-1Ph"/>
                             <constraint firstItem="CGc-eH-qaL" firstAttribute="leading" secondItem="rbB-02-W79" secondAttribute="leading" constant="20" id="Olo-ic-VLd"/>
