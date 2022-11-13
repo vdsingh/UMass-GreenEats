@@ -22,6 +22,10 @@ extension String {
         fullString.addAttributes(boldFontAttribute, range: range)
         return fullString
     }
+    
+    var floatValue: Float {
+        return (self as NSString).floatValue
+    }
 }
 
 extension UIColor {

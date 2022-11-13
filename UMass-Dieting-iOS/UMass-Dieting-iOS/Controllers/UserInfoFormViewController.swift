@@ -94,6 +94,7 @@ class UserInfoFormViewController: UIViewController {
            goal != "Select your Goal" &&
            verifyNumberFields()
         ) {
+            userDefaults.set(calculateCalories(), forKey: K.caloriesKey)
             nextButton.isEnabled = true
         } else {
             nextButton.isEnabled = false
@@ -114,6 +115,39 @@ class UserInfoFormViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+//    For men: BMR = 66.5 + (13.75 * weight in kg) + (5.003 * height in cm) - (6.75 * age)
+//
+//    For women: BMR = 655.1 + (9.563 * weight in kg) + (1.850 * height in cm) - (4.676 * age)
+    
+    private func calculateCalories() -> Float {
+        if(!verifyNumberFields()) {
+            return -1
+        }
+        let weightKG = (bodyweightTextField.text!.floatValue) * (1/2.20462)
+        let heightCM = Float(heightTextField.text!.floatValue) * (1/0.393701)
+        let ageYears = Float(ageTextField.text!.floatValue)
+        var BMR: Float = 0
+        if(gender == "male") {
+            BMR = 66.5 + (13.75 * weightKG) + (5.003 * heightCM) - (6.75 * ageYears)
+        } else {
+            BMR = 655.1 + (9.563 * weightKG) + (1.850 * heightCM) - (4.676 * ageYears)
+        }
+
+        switch activityLevel {
+        case "Not Active":
+            return BMR * 1.2
+        case "Somewhat Active":
+            return BMR * 1.375
+        case "Moderately Active":
+            return BMR * 1.55
+        case "Very Active":
+            return BMR * 1.725
+        default:
+            print("$ERROR: Activity level not selected")
+            return 2000
+        }
     }
 }
 

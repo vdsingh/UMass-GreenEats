@@ -30,6 +30,7 @@ class K {
     static let weightKey = "weight"
     static let heightKey = "height"
     static let ageKey = "age"
+    static let caloriesKey = "calories"
     
     static let goalKey = "goal"
     static let activityLevelKey = "activity-level"
