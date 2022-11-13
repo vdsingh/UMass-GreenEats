@@ -22,6 +22,7 @@
 		74A2355C2920D9E300DDBAA6 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2355B2920D9E300DDBAA6 /* Recommendation.swift */; };
 		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
+		74FB5245292103FA00F1FB2D /* SustainabilityCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB5244292103FA00F1FB2D /* SustainabilityCalcViewController.swift */; };
 		B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94792A7291F9DC600C32FE5 /* Main1.storyboard */; };
 		B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */; };
 		B94792AC291FA57300C32FE5 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792AB291FA57300C32FE5 /* Food.swift */; };
@@ -58,6 +59,7 @@
 		74A2355B2920D9E300DDBAA6 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		74FB5244292103FA00F1FB2D /* SustainabilityCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SustainabilityCalcViewController.swift; sourceTree = "<group>"; };
 		B94792A7291F9DC600C32FE5 /* Main1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main1.storyboard; sourceTree = "<group>"; };
 		B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanViewController.swift; sourceTree = "<group>"; };
 		B94792AB291FA57300C32FE5 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				B94792BB2920489000C32FE5 /* FoodViewController.swift */,
 				B94792BD2920806300C32FE5 /* DietaryRestrictionViewController.swift */,
 				74A235572920AAE000DDBAA6 /* UserPreferencesViewController.swift */,
+				74FB5244292103FA00F1FB2D /* SustainabilityCalcViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				B95711DD2920F255003255D9 /* InitialViewController.swift in Sources */,
 				74A235582920AAE000DDBAA6 /* UserPreferencesViewController.swift in Sources */,
 				B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */,
+				74FB5245292103FA00F1FB2D /* SustainabilityCalcViewController.swift in Sources */,
 				7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */,
 				B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */,
 				B94792AC291FA57300C32FE5 /* Food.swift in Sources */,

@@ -44,6 +44,13 @@ class Sessions {
     }
     
     public static func loadRecommendation(recommendationBody: RecommendationBody, completion: @escaping () -> Void){
+
+        
+        if(State.shared.recommendationFoods[recommendationBody.dining_hall]?[recommendationBody.menu]! != nil){
+            print("EEEEE")
+            completion()
+            return
+        }
         
         guard let url = URL(string: "\(Constants.API.API_URL)api/recommendations/create") else {
             print("URL not found")
