@@ -42,8 +42,9 @@ class FoodViewController: UIViewController {
         guard let food = self.food else {
             fatalError("$ERROR: Food is nil.")
         }
-        
-        foodNameLabel.text = "\(food.dish_name)"
+        if let dish_name = food.dish_name {
+            foodNameLabel.text = "\(dish_name)"
+        }
         
         servingSizeLabel.text = "\(food.serving_size ?? "")"
         caloriesNumberLabel.text = "\(food.calories ?? -1)"
