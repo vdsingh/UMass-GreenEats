@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 class K {
-    static let vegetarianImage = UIImage(systemName: "leaf.fill")
+    static let vegetarianImage = UIImage(systemName: "carrot.fill")
     static let localImage = UIImage(systemName: "map.fill")
     static let halalImage = UIImage(systemName: "h.fill")
-    static let sustainableImage = UIImage(systemName: "tree.fill")
-    static let wholeGrainImage = UIImage(systemName: "sun.fill")
+    static let sustainableImage = UIImage(systemName: "leaf.fill")
+    static let wholeGrainImage = UIImage(systemName: "sun.min.fill")
     static let antibioticFreeImage = UIImage(systemName: "allergens.fill")
 
     
