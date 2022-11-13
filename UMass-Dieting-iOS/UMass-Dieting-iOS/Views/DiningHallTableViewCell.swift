@@ -57,7 +57,6 @@ class DiningHallTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        print("AWAKE FROM NIB CALLED")
         super.awakeFromNib()
         
         contentView.addSubview(container)

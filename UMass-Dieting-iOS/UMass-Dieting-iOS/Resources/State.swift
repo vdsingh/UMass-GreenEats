@@ -10,10 +10,10 @@ class State {
     static let shared = State()
     
     var diningHalls: [DiningHall] = [
-        DiningHall(name: "Worcester Commons", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM"),
-        DiningHall(name: "Berkshire Commons", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM"),
-        DiningHall(name: "Hampshire Commons", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM"),
-        DiningHall(name: "Franklin Commons", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM")
+        DiningHall(name: "Worcester Commons", key: "worcester", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM"),
+        DiningHall(name: "Berkshire Commons", key: "berkshire", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM"),
+        DiningHall(name: "Hampshire Commons", key: "hampshire", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM"),
+        DiningHall(name: "Franklin Commons", key: "franklin", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 11:59 PM")
         
     ]
     

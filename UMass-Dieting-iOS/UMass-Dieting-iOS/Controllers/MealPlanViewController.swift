@@ -27,11 +27,7 @@ class MealPlanViewController: UIViewController {
         foodsTableView.dataSource = self
         foodsTableView.register(FoodTableViewCell.self, forCellReuseIdentifier: FoodTableViewCell.reuseIdentifier)
         
-        selectMealType(mealType: "Break-fast")
-        
- 
-        
-//        mealPlanTableView.reloadData()
+        selectMealType(mealType: "Lunch")
     }
     
     @IBAction func newTimeClicked(_ sender: UIButton) {
@@ -53,6 +49,12 @@ class MealPlanViewController: UIViewController {
                 button.layer.borderWidth = 1
             }
         })
+        mealPlan = MealPlan(foods: State.shared.DiningFoods["berkshire"]?["lunch_menu"] ?? [],
+    
+    calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
+        foodsTableView.reloadData()
+        
+        print("meal plan foods: \(mealPlan?.foods)")
     }
 }
 
