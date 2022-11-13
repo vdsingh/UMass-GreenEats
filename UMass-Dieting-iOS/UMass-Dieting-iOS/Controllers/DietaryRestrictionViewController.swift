@@ -68,22 +68,22 @@ class DietaryRestrictionViewController: UIViewController {
         var dietaryRestrictions: [String] = []
 
         if(isVeg) {
-            dietaryRestrictions.append("con-veg")
+            dietaryRestrictions.append(K.vegTag)
         }
         if(isHalal) {
-            dietaryRestrictions.append("con-halal")
+            dietaryRestrictions.append(K.halalTag)
         }
         if(isLocal) {
-            dietaryRestrictions.append("con-loc")
+            dietaryRestrictions.append(K.localTag)
         }
         if(isSustainable) {
-            dietaryRestrictions.append("con-sus")
+            dietaryRestrictions.append(K.sustainableTag)
         }
         if(isWholeGrain) {
-            dietaryRestrictions.append("con-whlgrn")
+            dietaryRestrictions.append(K.wholeGrainTag)
         }
         if(isAntibioticFree) {
-            dietaryRestrictions.append("con-antibfr")
+            dietaryRestrictions.append(K.antibioticFreeTag)
         }
 
         userDefaults.set(dietaryRestrictions, forKey: K.dietaryTagsKey)

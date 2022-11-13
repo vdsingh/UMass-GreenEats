@@ -12,6 +12,12 @@ class K {
     static let localImage = UIImage(systemName: "map.fill")
     
     static let dietaryTagsKey = "diet-tags"
+    static let vegTag = "con-veg"
+    static let halalTag = "con-halal"
+    static let localTag = "con-loc"
+    static let sustainableTag = "con-sus"
+    static let wholeGrainTag = "con-whlgrn"
+    static let antibioticFreeTag = "con-antibfr"
     
     //User Info Keys:
     static let genderKey = "gender"

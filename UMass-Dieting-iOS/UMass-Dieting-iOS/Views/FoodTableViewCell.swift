@@ -13,10 +13,9 @@ class FoodTableViewCell: UITableViewCell {
     var food: Food? = nil {
         didSet {
             foodTitle.attributedText = food?.dish_name?.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
-            foodSubTitle.text = "TEST TEXT"
+            foodSubTitle.text = food?.serving_size
             configureSustainabilityImage(sustainabilityRating: food?.carbon_rating ?? "Unknown")
             loadTagImages()
-            //            sustainabilityImage
         }
     }
     
@@ -135,7 +134,7 @@ class FoodTableViewCell: UITableViewCell {
         
         if let tags = food.tags {
             
-            if (tags.contains("vegetarian")) {
+            if (tags.contains(K.vegTag)) {
                 let vegetarianIcon: UIImageView = UIImageView(image: K.vegetarianImage)
                 vegetarianIcon.tintColor = .systemGreen
                 imagesStack.addArrangedSubview(vegetarianIcon)
@@ -144,7 +143,7 @@ class FoodTableViewCell: UITableViewCell {
                 print("FOOD IS VEGETARIAN")
             }
             
-            if (tags.contains("local")) {
+            if (tags.contains(K.localTag)) {
                 let localIcon: UIImageView = UIImageView(image: K.localImage)
                 localIcon.tintColor = .systemYellow
                 imagesStack.addArrangedSubview(localIcon)
