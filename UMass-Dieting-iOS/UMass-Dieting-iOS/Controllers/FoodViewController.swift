@@ -30,6 +30,8 @@ class FoodViewController: UIViewController {
     @IBOutlet weak var dietaryFiberNumberLabel: UILabel!
     @IBOutlet weak var sugarNumberLabel: UILabel!
     @IBOutlet weak var proteinNumberLabel: UILabel!
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,7 @@ class FoodViewController: UIViewController {
         dietaryFiberNumberLabel.text = "\(food.dietary_fiber ?? -1)"
         sugarNumberLabel.text = ""
         proteinNumberLabel.text = "\(food.protein ?? -1)"
+        ingredientsTextView.text = "Ingredients: \(food.ingredients ?? "")"
     }
     
     

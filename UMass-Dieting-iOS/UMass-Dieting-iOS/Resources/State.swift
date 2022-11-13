@@ -23,4 +23,11 @@ class State {
         "worcester": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": [], "latenight_menu": []],
         "hampshire": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": [], "latenight_menu": []]
     ]
+    
+    var recommendationFoods: [String: [String: Recommendation?]] = [
+        "berkshire": ["breakfast_menu": nil , "lunch_menu": nil, "dinner_menu": nil, "latenight_menu": nil],
+        "franklin": ["breakfast_menu": nil, "lunch_menu": nil, "dinner_menu": nil, "latenight_menu": nil],
+        "worcester": ["breakfast_menu": nil, "lunch_menu": nil, "dinner_menu": nil, "latenight_menu": nil],
+        "hampshire": ["breakfast_menu": nil, "lunch_menu": nil, "dinner_menu": nil, "latenight_menu": nil]
+    ]
 }

@@ -42,4 +42,52 @@ class Sessions {
         })
         dataTask?.resume()
     }
+    
+    public static func loadRecommendation(recommendationBody: RecommendationBody, completion: @escaping () -> Void){
+        
+        guard let url = URL(string: "\(Constants.API.API_URL)api/recommendations/create")else {
+            print("URL not found")
+            completion()
+            return
+        }
+        
+        do{
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "POST"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(recommendationBody)
+            
+            dataTask?.cancel()
+            
+            dataTask = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, res, error in
+                    
+                guard let data = data else {
+                    return
+                }
+                
+                do{
+                    let decodedData = try  JSONDecoder().decode(Recommendation.self, from: data)
+                    DispatchQueue.main.async {
+                        State.shared.recommendationFoods[recommendationBody.dining_hall]?[recommendationBody.menu] = decodedData
+                        completion()
+                        print("DATA \(decodedData)")
+                    }
+                }
+                catch let jsonError as NSError{
+                    print("$ERROR: \(jsonError)")
+                    print(String(describing: jsonError))
+                    print(jsonError.localizedDescription)
+                }
+                
+            })
+            
+            dataTask?.resume()
+        }
+        catch let jsonError as NSError {
+            print("$ERROR: \(jsonError)")
+            print(String(describing: jsonError))
+            print(jsonError.localizedDescription)
+        }
+        
+    }
 }

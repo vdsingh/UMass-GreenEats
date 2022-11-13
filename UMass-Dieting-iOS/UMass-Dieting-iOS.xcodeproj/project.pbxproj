@@ -19,6 +19,7 @@
 		74A2355629204BCC00DDBAA6 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2355529204BCC00DDBAA6 /* Sessions.swift */; };
 		74A235582920AAE000DDBAA6 /* UserPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A235572920AAE000DDBAA6 /* UserPreferencesViewController.swift */; };
 		74A2355A2920C50200DDBAA6 /* IntialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A235592920C50200DDBAA6 /* IntialViewController.swift */; };
+		74A2355C2920D9E300DDBAA6 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2355B2920D9E300DDBAA6 /* Recommendation.swift */; };
 		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
 		B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94792A7291F9DC600C32FE5 /* Main1.storyboard */; };
@@ -29,8 +30,6 @@
 		B94792B42920386A00C32FE5 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792B32920386A00C32FE5 /* K.swift */; };
 		B94792BC2920489000C32FE5 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792BB2920489000C32FE5 /* FoodViewController.swift */; };
 		B94792BE2920806300C32FE5 /* DietaryRestrictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792BD2920806300C32FE5 /* DietaryRestrictionViewController.swift */; };
-		B94DCEBB2920BDE10064E43B /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94DCEBA2920BDE10064E43B /* LaunchScreenViewController.swift */; };
-		B94DCEBD2920BE490064E43B /* GIFAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94DCEBC2920BE490064E43B /* GIFAnimationHelper.swift */; };
 		B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */; };
 		B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D79A291F696800E01F31 /* Extensions.swift */; };
 		B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */; };
@@ -55,6 +54,7 @@
 		74A2355529204BCC00DDBAA6 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		74A235572920AAE000DDBAA6 /* UserPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesViewController.swift; sourceTree = "<group>"; };
 		74A235592920C50200DDBAA6 /* IntialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntialViewController.swift; sourceTree = "<group>"; };
+		74A2355B2920D9E300DDBAA6 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B94792A7291F9DC600C32FE5 /* Main1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main1.storyboard; sourceTree = "<group>"; };
@@ -65,8 +65,6 @@
 		B94792B32920386A00C32FE5 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		B94792BB2920489000C32FE5 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		B94792BD2920806300C32FE5 /* DietaryRestrictionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryRestrictionViewController.swift; sourceTree = "<group>"; };
-		B94DCEBA2920BDE10064E43B /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
-		B94DCEBC2920BE490064E43B /* GIFAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFAnimationHelper.swift; sourceTree = "<group>"; };
 		B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoFormViewController.swift; sourceTree = "<group>"; };
 		B9A8D79A291F696800E01F31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B9A8D7A4291F7ACD00E01F31 /* DiningHallListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallListViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +148,7 @@
 				B9A8D7A8291F7C8A00E01F31 /* DiningHall.swift */,
 				B94792AB291FA57300C32FE5 /* Food.swift */,
 				B94792AD291FA5DB00C32FE5 /* MealPlan.swift */,
+				74A2355B2920D9E300DDBAA6 /* Recommendation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,7 +162,6 @@
 				B9A8D7AA291F89BB00E01F31 /* DiningHallTableViewCell.swift */,
 				B94792A7291F9DC600C32FE5 /* Main1.storyboard */,
 				B94792B1291FB51500C32FE5 /* FoodTableViewCell.swift */,
-				B94DCEBA2920BDE10064E43B /* LaunchScreenViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,7 +193,6 @@
 				B9A8D7A6291F7C6D00E01F31 /* State.swift */,
 				B94792B32920386A00C32FE5 /* K.swift */,
 				74A23552292049DF00DDBAA6 /* Constants.swift */,
-				B94DCEBC2920BE490064E43B /* GIFAnimationHelper.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -308,13 +305,12 @@
 				B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */,
 				7435C814291F5B270084DB78 /* ViewController.swift in Sources */,
 				B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */,
-				B94DCEBD2920BE490064E43B /* GIFAnimationHelper.swift in Sources */,
 				74A2355629204BCC00DDBAA6 /* Sessions.swift in Sources */,
 				7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */,
 				B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */,
+				74A2355C2920D9E300DDBAA6 /* Recommendation.swift in Sources */,
 				74A235582920AAE000DDBAA6 /* UserPreferencesViewController.swift in Sources */,
 				B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */,
-				B94DCEBB2920BDE10064E43B /* LaunchScreenViewController.swift in Sources */,
 				7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */,
 				B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */,
 				B94792AC291FA57300C32FE5 /* Food.swift in Sources */,
@@ -470,7 +466,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJUSE27PV3;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -499,7 +495,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJUSE27PV3;
+				DEVELOPMENT_TEAM = 99Z682G7GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UMass-Dieting-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
