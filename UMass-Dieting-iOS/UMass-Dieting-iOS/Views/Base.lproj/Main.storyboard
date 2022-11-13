@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oJk-ma-gAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Faa-Yv-Prt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -165,6 +165,19 @@
             </objects>
             <point key="canvasLocation" x="-3123" y="931"/>
         </scene>
+        <!--Intial View Controller-->
+        <scene sceneID="lVj-TN-WLD">
+            <objects>
+                <navigationController id="Faa-Yv-Prt" customClass="IntialViewController" customModule="UMass_Dieting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Yz-fl-ESs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Poh-bO-DF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2087" y="104"/>
+        </scene>
         <!--Dietary Restriction View Controller-->
         <scene sceneID="bgt-Cv-xS0">
             <objects>
@@ -269,14 +282,111 @@
         <!--Settings-->
         <scene sceneID="vt8-Ge-o6G">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="dIG-To-PTC" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="dIG-To-PTC" customClass="UserPreferencesViewController" customModule="UMass_Dieting_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2qO-dg-KGF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grB-yM-KEo">
+                                <rect key="frame" x="120" y="663" width="174" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Kdl-pc-Rht"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Change Preferences"/>
+                                <connections>
+                                    <action selector="changePrefTapped:" destination="dIG-To-PTC" eventType="touchUpInside" id="nUG-cX-ThJ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mgd-Ag-0pf">
+                                <rect key="frame" x="20" y="115" width="374" height="448"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhc-mM-EQe">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yt-BL-waT">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiX-JM-tXe">
+                                        <rect key="frame" x="0.0" y="112" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX6-u0-fQB">
+                                        <rect key="frame" x="0.0" y="168" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC9-3b-cYM">
+                                        <rect key="frame" x="0.0" y="224" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cB-dg-9ga">
+                                        <rect key="frame" x="0.0" y="280" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdj-at-Rgd">
+                                        <rect key="frame" x="0.0" y="336" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdh-Rr-9XB">
+                                        <rect key="frame" x="0.0" y="392" width="374" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2T-Mj-qtQ">
+                                <rect key="frame" x="115" y="35" width="184" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="v6Z-bp-3li"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PkD-WP-VTr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mgd-Ag-0pf" firstAttribute="leading" secondItem="PkD-WP-VTr" secondAttribute="leading" constant="20" id="7UZ-VL-1sN"/>
+                            <constraint firstItem="grB-yM-KEo" firstAttribute="top" secondItem="Mgd-Ag-0pf" secondAttribute="bottom" constant="100" id="8dK-SM-0kO"/>
+                            <constraint firstItem="PkD-WP-VTr" firstAttribute="trailing" secondItem="Mgd-Ag-0pf" secondAttribute="trailing" constant="20" id="Diu-xH-E9U"/>
+                            <constraint firstItem="grB-yM-KEo" firstAttribute="centerX" secondItem="2qO-dg-KGF" secondAttribute="centerX" id="OvK-6s-JgC"/>
+                            <constraint firstItem="PkD-WP-VTr" firstAttribute="bottom" secondItem="grB-yM-KEo" secondAttribute="bottom" constant="90" id="cL8-iE-x4E"/>
+                            <constraint firstItem="Mgd-Ag-0pf" firstAttribute="top" secondItem="E2T-Mj-qtQ" secondAttribute="bottom" constant="50" id="ddZ-rL-m4Q"/>
+                            <constraint firstItem="PkD-WP-VTr" firstAttribute="trailing" secondItem="grB-yM-KEo" secondAttribute="trailing" constant="120" id="kAL-ht-iNV"/>
+                            <constraint firstItem="grB-yM-KEo" firstAttribute="leading" secondItem="PkD-WP-VTr" secondAttribute="leading" constant="120" id="n3e-Xa-RUF"/>
+                            <constraint firstItem="E2T-Mj-qtQ" firstAttribute="centerX" secondItem="2qO-dg-KGF" secondAttribute="centerX" id="qxz-rh-MYu"/>
+                            <constraint firstItem="E2T-Mj-qtQ" firstAttribute="top" secondItem="PkD-WP-VTr" secondAttribute="top" constant="35" id="tPn-Tv-taQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="NvK-Xh-SQx"/>
+                    <connections>
+                        <outlet property="activityLabel" destination="Rdh-Rr-9XB" id="7EJ-t9-1md"/>
+                        <outlet property="ageLabel" destination="qX6-u0-fQB" id="41u-Pw-N7l"/>
+                        <outlet property="calorieLabel" destination="6cB-dg-9ga" id="orj-HD-gCh"/>
+                        <outlet property="dietRestrictionLabel" destination="yC9-3b-cYM" id="kPK-Rr-S9k"/>
+                        <outlet property="genderLabel" destination="lhc-mM-EQe" id="0JT-7P-AT0"/>
+                        <outlet property="goalLabel" destination="Xdj-at-Rgd" id="9wN-pW-riI"/>
+                        <outlet property="heightLabel" destination="RiX-JM-tXe" id="KEu-My-Nw9"/>
+                        <outlet property="weightLabel" destination="0Yt-BL-waT" id="6q5-d2-Myw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBn-GF-xdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -335,7 +445,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="MUr-4o-HLs">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="oJk-ma-gAM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oJk-ma-gAM" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hEN-4w-j42"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cey-1B-cs3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>

@@ -17,6 +17,8 @@
 		74A23551291F9B8700DDBAA6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 74A23550291F9B8700DDBAA6 /* .gitignore */; };
 		74A23553292049DF00DDBAA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A23552292049DF00DDBAA6 /* Constants.swift */; };
 		74A2355629204BCC00DDBAA6 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2355529204BCC00DDBAA6 /* Sessions.swift */; };
+		74A235582920AAE000DDBAA6 /* UserPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A235572920AAE000DDBAA6 /* UserPreferencesViewController.swift */; };
+		74A2355A2920C50200DDBAA6 /* IntialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A235592920C50200DDBAA6 /* IntialViewController.swift */; };
 		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
 		B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94792A7291F9DC600C32FE5 /* Main1.storyboard */; };
@@ -49,6 +51,8 @@
 		74A23550291F9B8700DDBAA6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		74A23552292049DF00DDBAA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		74A2355529204BCC00DDBAA6 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
+		74A235572920AAE000DDBAA6 /* UserPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesViewController.swift; sourceTree = "<group>"; };
+		74A235592920C50200DDBAA6 /* IntialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntialViewController.swift; sourceTree = "<group>"; };
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B94792A7291F9DC600C32FE5 /* Main1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main1.storyboard; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */,
 				B94792BB2920489000C32FE5 /* FoodViewController.swift */,
 				B94792BD2920806300C32FE5 /* DietaryRestrictionViewController.swift */,
+				74A235572920AAE000DDBAA6 /* UserPreferencesViewController.swift */,
+				74A235592920C50200DDBAA6 /* IntialViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				74A2355629204BCC00DDBAA6 /* Sessions.swift in Sources */,
 				7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */,
 				B9A8D7A5291F7ACD00E01F31 /* DiningHallListViewController.swift in Sources */,
+				74A235582920AAE000DDBAA6 /* UserPreferencesViewController.swift in Sources */,
 				B9A8D799291F626200E01F31 /* UserInfoFormViewController.swift in Sources */,
 				7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */,
 				B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */,
@@ -307,6 +314,7 @@
 				B94792B42920386A00C32FE5 /* K.swift in Sources */,
 				B9A8D7AB291F89BB00E01F31 /* DiningHallTableViewCell.swift in Sources */,
 				B9A8D7A7291F7C6D00E01F31 /* State.swift in Sources */,
+				74A2355A2920C50200DDBAA6 /* IntialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
