@@ -8,9 +8,7 @@
 import UIKit
 
 class DiningHallListViewController: UIViewController {
-
     @IBOutlet weak var diningHallTableView: UITableView!
-    
     private var dataTask: URLSessionDataTask?
     
     var foods: [Food]? = []
@@ -20,86 +18,56 @@ class DiningHallListViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = "Dining Halls"
         diningHallTableView.delegate = self
         diningHallTableView.dataSource = self
-//        diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
-        // Do any additional setup after loading the view.
+
         diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
-        
+
         loadData(diningHall: "berkshire", menu: "dinner_menu")
     }
     
     @objc private func loadData(diningHall: String, menu: String){
-        
-        print("RESPONSE")
-        
         guard let url = URL(string: "\(Constants.API.API_URL)api/foods/get/\(diningHall)/\(menu)") else {
-            print("url not found")
+            print("$ERROR: url not found")
             return
         }
-        
-        print("RESPONSE")
-        
+                
         dataTask?.cancel()
-        
         dataTask = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
-            
             guard let data = data else {
                 return
             }
             do {
                 let decodedData = try JSONDecoder().decode([Food].self, from: data)
                     DispatchQueue.main.async {
-                        // TODO: added dining to state and reload view
                         State.shared.DiningFoods[diningHall]?[menu] = decodedData
-                        
                     }
-            }catch let jsonError as NSError{
-                print("ERRROR")
+            } catch let jsonError as NSError {
+                print("$ERROR: \(jsonError)")
                 print(String(describing: jsonError))
                 print(jsonError.localizedDescription)
             }
-
         })
-        
         dataTask?.resume()
-        
-        
-        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension DiningHallListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return State.shared.diningHalls.count
     }
-//    ToMealPlanViewController
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("CELL FOR ROW AT CALLED")
         let diningHall: DiningHall = State.shared.diningHalls[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: DiningHallTableViewCell.reuseIdentifier, for: indexPath) as? DiningHallTableViewCell {
             cell.diningHall = diningHall
             
             return cell
         }
-//        cell.diningHall = diningHall
-        
         return UITableViewCell()
     }
 }
 
 extension DiningHallListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected dining hall!")
         performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
