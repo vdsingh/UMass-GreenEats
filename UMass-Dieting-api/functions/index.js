@@ -8,7 +8,7 @@
 //   response.send("Hello from Firebase!");
 // });
 
-
+import structuredClone from '@ungap/structured-clone';
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const express = require('express');
@@ -118,6 +118,8 @@ app.post('/api/recommendations/create', (req, res) => {
     (async () => {
         try {
             // TODO: logic
+
+
             let food_info;
             const data = await db.collection('database').doc('data').get()
             .then(data => {
@@ -128,8 +130,6 @@ app.post('/api/recommendations/create', (req, res) => {
                 food_info = foods;
             })
             
-
-            
             let tag_preferences;
             let recommended_calories;
             let user_info = await db.collection('users').doc(user_ID).get()
@@ -137,10 +137,60 @@ app.post('/api/recommendations/create', (req, res) => {
                 tag_preferences = user_info.data()["tag_preferences"]
                 recommended_calories = user_info.data()["reccomended_calories"]
             })
-            
-            
 
-            return res.status(200).send({tag_preferences, recommended_calories, food_info});
+            initalFilter = [];
+            food_info.forEach(food => {
+
+                food_tags = food['tags'].split(" ")
+                let has_tags = true;
+                
+                for(let i = 0; i < tag_preferences.length; i++){
+
+                    if(!(tag_preferences[i] in food_tags)){
+                        has_tags = false
+                        break
+                    }
+                }
+                
+                if(has_tags && food['carbon_rating'] == 'A' || food['carbon_rating'] == 'B' || food['carbon_rating'] == 'C'){
+                    initalFilter.push(food)
+                }
+
+            })
+
+            meals = [];
+
+            const mealFunc = (mealObject, i) => {
+                mealObject['calories'] += initalFilter[i]['calories']
+                if(mealObject['calories'] >= recommended_calories/3){
+                    meals.push(mealObject)
+                    return
+                }
+                while(i < initalFilter.length){
+                    mealFunc(structuredClone(mealObject), i+1);
+                    i++;
+                }
+            }
+
+            for(let i = 0; i < initalFilter.length; i++){
+                mealObject = {
+                    'calories': initialFilter[i]['calories'],
+                    'total_fat': total_fat,
+                    'sat_fat': sat_fat,
+                    'trans_fat': trans_fat,
+                    'cholesterol': cholesterol,
+                    'sodium': sodium,
+                    'total_carbs': total_carbs,
+                    'dietary_fiber': dietary_fiber,
+                    'sugar': sugar,
+                    'protein': protein
+                }
+                mealFunc(mealObject, i);
+            }
+
+
+            
+            return res.status(200).send({initalFilter});
         } catch (error) {
             console.log(error);
             return res.status(500).send(error);
