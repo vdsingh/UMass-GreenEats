@@ -29,8 +29,8 @@ class InitialViewController: UINavigationController {
         nextButton = UIButton(frame: CGRect(x: offset / 2, y: UIScreen.main.bounds.height / 2 + (offset / 2), width: UIScreen.main.bounds.width - offset, height: offset/2))
         
         if let nextButton = self.nextButton {
-            nextButton.backgroundColor = .orange
-            nextButton.layer.cornerRadius = 10
+            nextButton.backgroundColor = UIColor(hexString: K.orangeColorHex)
+            nextButton.layer.cornerRadius = 15
             nextButton.setTitle("Let's Eat!", for: .normal)
             nextButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             nextButton.setTitleColor(.white, for: .normal)
