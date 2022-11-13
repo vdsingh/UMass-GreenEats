@@ -21,8 +21,6 @@ class DiningHallListViewController: UIViewController {
         diningHallTableView.dataSource = self
 
         diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
-
-//        loadData(diningHall: "berkshire", menu: "dinner_menu")
     }
     
 }
@@ -58,10 +56,7 @@ extension DiningHallListViewController: UITableViewDelegate {
         guard let selectedDiningHall = self.selectedDiningHall else {
             fatalError("$ERROR: Selected dining hall is nil")
         }
-        
-        Sessions.loadFoodData(diningHall: selectedDiningHall.key, menu: "breakfast_menu") {
-            self.performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
-        }
+        self.performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

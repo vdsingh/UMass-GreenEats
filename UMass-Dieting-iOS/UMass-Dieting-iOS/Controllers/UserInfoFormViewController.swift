@@ -29,6 +29,7 @@ class UserInfoFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configurePopUpButtons()
         nextButton.isEnabled = false
         
@@ -39,6 +40,7 @@ class UserInfoFormViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
+    
     
     func configurePopUpButtons() {
         let genderSelectionClosure = { (action: UIAction) in

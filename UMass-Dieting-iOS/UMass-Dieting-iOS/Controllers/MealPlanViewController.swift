@@ -10,12 +10,12 @@ import UIKit
 class MealPlanViewController: UIViewController {
     
     var selectedFood: Food? = nil
-    
-    var mealPlan: MealPlan? = MealPlan(foods: [
-
-    ], calories: 25, saturatedFat: 30, transFat: 35, cholesterol: 40, sodium: 20, total_carbs: 20, dietary_fiber: 30, sugars: 20, protein: 20)
-    
+    var foods: [[Food]] = [[], []]
+    var recommendation: Recommendation?
+    let headers: [String] = ["Recommended Foods", "All Foods"]
     var diningHall: DiningHall!
+    
+    var mealTime: String = "Break-fast"
     
     @IBOutlet weak var foodsTableView: UITableView!
     @IBOutlet weak var mealTimesStack: UIStackView!
@@ -35,96 +35,150 @@ class MealPlanViewController: UIViewController {
             fatalError("$ERROR: Dining hall is nil")
         }
         self.title = diningHall.name
-        selectMealType(mealType: "Break-fast", diningHall: diningHall)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        mealTimesStack.
-        selectMealType(mealType: "Break-fast", diningHall: diningHall)
-    }
-    
-    @IBAction func newTimeClicked(_ sender: UIButton) {
-        selectMealType(mealType: sender.titleLabel?.text ?? "", diningHall: self.diningHall)
-    }
-    
-    func selectMealType(mealType: String, diningHall: DiningHall) {
-        mealTimesStack.arrangedSubviews.forEach({
-            let button = $0 as! UIButton
-            if(button.titleLabel?.text == mealType) {
-                button.layer.cornerRadius = 10
-                button.backgroundColor = .link
-                button.tintColor = .white
-            } else {
-                button.backgroundColor = .systemBackground
-                button.tintColor = .link
-                button.layer.borderColor = UIColor.link.cgColor
-                button.layer.cornerRadius = 10
-                button.layer.borderWidth = 1
-            }
-        })
+        let calendar = Calendar.current
+        let now = Date()
+        let seven_am_today = calendar.date (
+          bySettingHour: 7,
+          minute: 0,
+          second: 0,
+          of: now)!
         
-        spinner.isHidden = false
-        errorLabel.isHidden = true
-        self.mealPlan?.foods = []
-        foodsTableView.reloadData()
-        Sessions.loadFoodData(diningHall: diningHall.key, menu:  mealTypeKeyDictionary[mealType]!) {
-            print("Completion called!")
-            self.spinner.isHidden = true
-            self.mealPlan = MealPlan(foods: State.shared.DiningFoods[diningHall.key]?[self.mealTypeKeyDictionary[mealType]!] ?? [], calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
-            if(self.mealPlan?.foods.count == 0){
-                self.errorLabel.isHidden = false
-            }
-            self.foodsTableView.reloadData()
-        }
-    }
-}
+        let eleven_am_today = calendar.date (
+            bySettingHour: 11,
+            minute: 0,
+            second: 0,
+            of: now)!
 
-extension MealPlanViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let mealPlan = self.mealPlan else {
-            fatalError("$ERROR: Meal plan is nil!")
-        }
-        print("FOOD COUNT: \(mealPlan.foods.count)")
-//        tableView.reloadData()
-        return mealPlan.foods.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let mealPlan = self.mealPlan else {
-            fatalError("$ERROR: Meal plan is nil!")
-        }
-        if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.reuseIdentifier, for: indexPath) as? FoodTableViewCell {
-            let food: Food = mealPlan.foods[indexPath.row]
-            cell.food = food
-            cell.accessoryType = .disclosureIndicator
-            return cell
+        let four_thirty_pm_today = calendar.date (
+          bySettingHour: 16,
+          minute: 30,
+          second: 0,
+          of: now)!
+        
+        let nine_pm_today = calendar.date (
+          bySettingHour: 21,
+          minute: 0,
+          second: 0,
+          of: now)!
+        
+        if(Date() >= seven_am_today && Date() <= eleven_am_today) {
+            selectMealType(mealType: "Break-fast", diningHall: diningHall)
+        } else if(Date() > eleven_am_today && Date() <= four_thirty_pm_today) {
+            selectMealType(mealType: "Lunch", diningHall: diningHall)
+        } else if(Date() > four_thirty_pm_today && Date() < nine_pm_today) {
+            selectMealType(mealType: "Lunch", diningHall: diningHall)
         } else {
-           fatalError("$ERROR: Failed to dequeue food cell!")
+            selectMealType(mealType: "Late Night", diningHall: diningHall)
         }
     }
-}
-
-extension MealPlanViewController: UITableViewDelegate {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? FoodViewController {
-            guard let food = selectedFood else {
-                fatalError("$ERROR: Food is nil.")
+        
+        @IBAction func sustainButtonTapped(_ sender: Any) {
+            self.recommendation = State.shared.recommendationFoods[diningHall.key]![self.mealTypeKeyDictionary[mealTime]!] as? Recommendation
+            performSegue(withIdentifier: "SustainableSegue", sender: send)
+        }
+        
+        
+        @IBAction func newTimeClicked(_ sender: UIButton) {
+            self.mealTime = sender.titleLabel?.text ?? ""
+            selectMealType(mealType: sender.titleLabel?.text ?? "", diningHall: self.diningHall)
+        }
+        
+        func selectMealType(mealType: String, diningHall: DiningHall) {
+            mealTimesStack.arrangedSubviews.forEach({
+                let button = $0 as! UIButton
+                if(button.titleLabel?.text == mealType) {
+                    button.layer.cornerRadius = 10
+                    button.backgroundColor = .link
+                    button.tintColor = .white
+                } else {
+                    button.backgroundColor = .systemBackground
+                    button.tintColor = .link
+                    button.layer.borderColor = UIColor.link.cgColor
+                    button.layer.cornerRadius = 10
+                    button.layer.borderWidth = 1
+                }
+            })
+            
+            spinner.isHidden = false
+            errorLabel.isHidden = true
+            self.foods = [[],[]]
+            foodsTableView.reloadData()
+            Sessions.loadFoodData(diningHall: diningHall.key, menu:  mealTypeKeyDictionary[mealType]!) {
+                print("Completion called!")
+                self.foods[1] = State.shared.DiningFoods[diningHall.key]?[self.mealTypeKeyDictionary[mealType]!] ?? []
+                
+                let body = RecommendationBody(
+                    tag_preferences: UserDefaults.standard.value(forKey: K.dietaryTagsKey) as! [String],
+                    recommended_calories: UserDefaults.standard.value(forKey: K.caloriesKey) as! Float,
+                    dining_hall: diningHall.key,
+                    menu: self.mealTypeKeyDictionary[mealType]!)
+                Sessions.loadRecommendation(recommendationBody: body) {
+                    if let recommendation = State.shared.recommendationFoods[diningHall.key]![self.mealTypeKeyDictionary[mealType]!] as? Recommendation {
+                        self.foods[0] = recommendation.dishes ?? []
+                        self.recommendation = recommendation
+                    }
+                    self.spinner.isHidden = true
+                    if(self.foods[0].count == 0 && self.foods[1].count == 0){
+                        self.errorLabel.isHidden = false
+                    }
+                    self.foodsTableView.reloadData()
+                }
             }
-            destination.food = food
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedFood = mealPlan?.foods[indexPath.row]
-        performSegue(withIdentifier: "ToFoodViewController", sender: self)
-        tableView.deselectRow(at: indexPath, animated: true)
+    extension MealPlanViewController: UITableViewDataSource {
+        
+        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            if(foods[0].count == 0 && foods[1].count == 0) {
+                return ""
+            }
+            return headers[section]
+        }
+        
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return foods.count
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return foods[section].count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.reuseIdentifier, for: indexPath) as? FoodTableViewCell {
+                let food: Food = foods[indexPath.section][indexPath.row]
+                cell.food = food
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            } else {
+                fatalError("$ERROR: Failed to dequeue food cell!")
+            }
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+    extension MealPlanViewController: UITableViewDelegate {
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let destination = segue.destination as? FoodViewController {
+                guard let food = selectedFood else {
+                    fatalError("$ERROR: Food is nil.")
+                }
+                destination.food = food
+            }else if let destination = segue.destination as? SustainabilityCalcViewController {
+                destination.carbonNum = self.recommendation?.co2 ?? 0
+            }
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            self.selectedFood = foods[indexPath.section][indexPath.row]
+            performSegue(withIdentifier: "ToFoodViewController", sender: self)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 70
+        }
     }
-}

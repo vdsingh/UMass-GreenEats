@@ -9,14 +9,9 @@ import Foundation
 import UIKit
 class FoodViewController: UIViewController {
     var food: Food? = nil
-//        didSet {
-//            updateNutritionLabel()
-//        }
-//    }
-//
+
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var servingSizeLabel: UILabel!
-    
     
     @IBOutlet weak var nutritionLabelView: UIView!
     @IBOutlet weak var caloriesNumberLabel: UILabel!
@@ -30,11 +25,12 @@ class FoodViewController: UIViewController {
     @IBOutlet weak var dietaryFiberNumberLabel: UILabel!
     @IBOutlet weak var sugarNumberLabel: UILabel!
     @IBOutlet weak var proteinNumberLabel: UILabel!
+    @IBOutlet weak var ingredientsTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nutritionLabelView.layer.borderWidth = 3
-        nutritionLabelView.layer.borderColor = UIColor.black.cgColor
+        nutritionLabelView.layer.borderColor = UIColor.label.cgColor
         updateNutritionLabel()
     }
     
@@ -57,7 +53,6 @@ class FoodViewController: UIViewController {
         dietaryFiberNumberLabel.text = "\(food.dietary_fiber ?? -1)"
         sugarNumberLabel.text = ""
         proteinNumberLabel.text = "\(food.protein ?? -1)"
+        ingredientsTextView.text = "Ingredients: \(food.ingredients ?? "")"
     }
-    
-    
 }
