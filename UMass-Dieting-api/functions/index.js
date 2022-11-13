@@ -1,14 +1,3 @@
-// const functions = require("firebase-functions");
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
-
-
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const express = require('express');
@@ -18,11 +7,16 @@ const fs = require("fs");
 const app = express();
 
 var serviceAccount = require("./permissions.json");
+const { initializeApp } = require('firebase-admin');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://fir-api-9a206..firebaseio.com"
 });
 const db = admin.firestore();
+
+function generateRandomFloatInRange(min, max) {
+    return (Math.random() * (max - min + 1)) + min;
+}
 
 app.use(cors());
 
@@ -110,8 +104,10 @@ app.post('/api/users/create', (req, res) => {
 });
 
 app.post('/api/recommendations/create', (req, res) => {
+    let bestMeal = null;
     const {
-        user_ID,
+        tag_preferences,
+        recommended_calories,
         dining_hall,
         menu
     } = req.body;
@@ -125,39 +121,46 @@ app.post('/api/recommendations/create', (req, res) => {
             .then(data => {
                 const foods = [];
                 for (const food in data.data()[dining_hall][menu]) {
-                    foods.push(data.data()[dining_hall][menu][food]);
+                    // only > 50 calories
+                    if (data.data()[dining_hall][menu][food]['calories'] > 35) {
+                        foods.push(data.data()[dining_hall][menu][food]);
+                    }
                 }
                 food_info = foods;
             })
-            
-            let tag_preferences;
-            let recommended_calories;
-            let user_info = await db.collection('users').doc(user_ID).get()
-            .then(user_info => {
-                tag_preferences = user_info.data()["tag_preferences"]
-                recommended_calories = user_info.data()["reccomended_calories"]
-            })
-
-            initalFilter = [];
+            if (food_info.length === 0) {
+                return res.status(200).send({});
+            }            
+            let initalFilter = []
             food_info.forEach(food => {
 
+                // get all tags related to food
                 food_tags = food['tags'].split(" ")
-                let has_tags = true;
+                let has_tags = false;
                 
+                // loop through user's preferenes
                 for(let i = 0; i < tag_preferences.length; i++){
-
-                    if(!(tag_preferences[i] in food_tags)){
-                        has_tags = false
+                    // if user preference is not in food, don't add it 
+                    if((food_tags.includes(tag_preferences[i]))){
+                        has_tags = true;
                         break
                     }
                 }
+
+                if (tag_preferences.length === 0) {
+                    has_tags = true;
+                }                
                 
-                if(has_tags && food['carbon_rating'] == 'A' || food['carbon_rating'] == 'B' || food['carbon_rating'] == 'C'){
+                // if the user preference and carbon rating > C we push 
+                if(has_tags && (food['carbon_rating'] == 'A' || food['carbon_rating'] == 'B' || food['carbon_rating'] == 'C')){
                     initalFilter.push(food)
                 }
 
             })
-            
+
+            if (initalFilter.length === 0) {
+                return res.status(200).send({});
+            }
             
             meals = [];
             for(let j = 0; j < 10; j++){
@@ -173,12 +176,13 @@ app.post('/api/recommendations/create', (req, res) => {
                     'total_carbs': 0,
                     'dietary_fiber': 0,
                     'sugar': 0,
-                    'protein': 0
+                    'protein': 0,
+                    'co2': 0
                 }
-                console.log(initalFilter[0]['dish_name'])
+                // console.log(initalFilter[0]['dish_name'])
                 while(mealObject['calories'] <= recommended_calories/3){
                     let curr = initalFilter[Math.floor(Math.random() * initalFilter.length)]
-                    mealObject['dishes'].push(curr['dish_name'])
+                    mealObject['dishes'].push(curr)
                     mealObject['calories'] += curr['calories']
                     mealObject['total_fat'] += curr['total_fat']
                     mealObject['sat_fat'] += curr['sat_fat']
@@ -189,16 +193,51 @@ app.post('/api/recommendations/create', (req, res) => {
                     mealObject['dietary_fiber'] += curr['dietary_fiber']
                     mealObject['sugar'] += curr['sugar']
                     mealObject['protein'] += curr['protein']
+                    // mealObject['co2'] += curr['protein']
+                    if (curr['serving_size'].toUpperCase().includes('OZ')) {
+
+                        const getCarbonMap = () => {
+                            return {
+                                'A': generateRandomFloatInRange(0.4, 1.4),
+                                'B': generateRandomFloatInRange(1.8, 2.45),
+                                'C': generateRandomFloatInRange(2.5, 3.4),
+                            }
+                        }
+
+                        const carbonMap = getCarbonMap();
+
+                        // console.log(curr['serving_size']);
+                        const tokens = curr['serving_size'].split(' ');
+
+                        if (tokens.length > 0) {
+                            const oz = tokens[0];
+
+                            // does not contains digit
+                            if (oz.match(/^[0-9]+$/) != null) {
+                                const grams = parseInt(oz) * 28.3495;
+                                mealObject['co2'] += grams * carbonMap[curr['carbon_rating']];
+                            }
+                        }
+                    } else {
+                        mealObject['co2'] += 50;
+                    }
                 }
 
                 meals.push(mealObject)
-                
 
+                // console.log(meals);
+                
+                bestMeal = meals[0];
+                for (let i=0; i<meals.length; ++i) {
+                    if (meals[i]['co2'] != 0 && meals[i]['co2'] < bestMeal['co2']) {
+                        bestMeal = meals[i];
+                    }
+                }
             }
             
             
 
-            return res.status(200).send({meals});
+            return res.status(200).send(bestMeal);
         } catch (error) {
             console.log(error);
             return res.status(500).send(error);

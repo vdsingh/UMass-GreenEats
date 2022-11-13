@@ -23,7 +23,7 @@ def get_food(food_items, food_list):
                 healthfulness = int(healthfulness)
             except Exception as a:
                 healthfulness = -1
-        
+
             carbon_rating = data.get_attribute('data-carbon-list')
             try:
                 carbon_rating = str(carbon_rating)
@@ -91,11 +91,11 @@ def get_food(food_items, food_list):
                 'tags': tags
             }
 
-            
+
 
 
 def main():
-    
+
     # not_found = True
     # while not_found:
     #     try:
@@ -103,12 +103,12 @@ def main():
     #         not_found = False
     #     except Exception as e:
     #         pass
-    
+
     #print(food_items)
 
     # food_items = driver.find_element(By.ID, 'dining_menu').find_element(By.ID, 'content_text').find_elements(By.TAG_NAME, 'li')
 
-    
+
     # for food in food_items:
     #     not_found = True
     #     while not_found:
@@ -123,7 +123,7 @@ def main():
     dining_halls_menus = {}
 
     for dh in ['worcester', 'berkshire', 'hampshire', 'franklin']:
-        print(dh)
+        
         driver.get('https://umassdining.com/locations-menus/' + dh + '/menu')
 
         menu_bfast = {}
@@ -156,10 +156,12 @@ def main():
 
         dining_halls_menus[dh] = menu
 
-    print(dining_halls_menus)
+    # print(dining_halls_menus)
 
     json_object = json.dumps(dining_halls_menus, indent=4)
- 
+
+    print(json_object)
+
     # Writing to sample.json
     with open("data.json", "w") as outfile:
         outfile.write(json_object)
@@ -170,7 +172,7 @@ def main():
 
 
 if __name__ == '__main__':
-    
+
     # curr_time = datetime.strftime(datetime.now(), "%H %M").split(" ")
     # print(curr_time)
 
@@ -188,4 +190,5 @@ if __name__ == '__main__':
 
     # print(current_menu)
     main()
+
 

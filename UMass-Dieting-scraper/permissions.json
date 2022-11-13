@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "umass-diets",
+  "private_key_id": "9735d234d113a905eab952bcae20138281a99fca",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC02SyM9cREVmrS\nyls4O3KERIW+d0cZSNBZgHhwn4ILTLqBN9uCholp1/0ZHBtXsw2ByyvGOAaHQIQI\njxNT/ZgMBAb6BgfrHI23gLa4niZwC2+iphuUERJcQefvgrVZfdkwA77u+NGIcB2/\n0gHKJcNSJI9ZruwBXP8aXMqt6uT+GxFRZhnEszPrM6J8yqAQ3HxhPimPABSCMz5n\nRxsc2JCUHOUd6K7Fy+RfooFlKx2wQGuZ83RqVZ4X5SZNMQctb8PSPZL69QzmQmeW\neIVblUOkx62XmwuF8pUNEpvPAD8ztgULB1g+/d1o2HpUC05qrYB9iCuF/t3SiUK1\nJx/UsU3bAgMBAAECggEARwpIhdbFElMgA02aJ6yyf2KrZvZT54rCzWW56gO+gdHS\nMZBPmiZfNES0F3kDBKBBXgsBVwwLBHZDZ1lMrmGfqJisZOqZkbHVuY/GNx9o2fqk\nD7BQhQlvvO3mvh8KPe1Bs6rFBfqX1JC2HvPP4CiVYV8bMI+WBbMSQrjQpSDwcyBl\nEWE+vh0PkA9j79sK35ia3Nt5MlfuVK2c9jXAGX9blM+Eqf7omTWRNp4kifscr5fO\nXmzakavY7MVRGDnkFF30IyXs0gUSolKglvch+ACm3etpZ2p8uXyQfnGDVp+6DTm8\nPPEpxWAAi9xfVvuBjL8Z74TDhRZF6yglNcexuqFTgQKBgQDsa/FeIhrQZR/sW58a\nzBjiRNJjJv/HB9MeDuKADaQbF7uBBJQoP7ZzhmDsKnw43F/MU1wpT+yblvI5Dsgx\n38kJ8GpbNLWH72Wo5VpcfR4/V9QAP2bJc5cNL4llSspukI/JVNjJTXi70GICsBBl\n0akjR0M07DQN+/jMLW8ULtEtBQKBgQDD0xicI4MXgAqaSy8SxCwwaTSqG3Xf42zW\npEJV2y7W+c3OchNEQV5dy0LnZ99axvH8IZEobtTHEmNvaogN9khK0NwgyMZk6SB+\nouFzqC8c0SU+vQm8YkuFXozayoEQoLmhJ32RGxu+rGGsHKILCpyPqXlwDx1HJxc4\nqK84VVaFXwKBgQCNuALej4kNRKEHOMC9+nwsHl8TCoymTP1zdi613fdyOh6urwT0\nv4Rp6bJtvuXp28gdHhcPuJY3ihs2srK0mtXS/Gd0trreelWxEZLCAEpCZC5z242M\n0ppIUCeHLXb9IfDfGdo9iRAHXVlzDQE3V5+QwyX5MmHdxB4WnmGIcqv21QKBgFZL\nH/0uaQZiFkoH96Z9bDupINwVXcxbnAq6N8E95VY2nsrq2jKp27vZZpIy4+pM4TYK\nVL1Mmddf8xGWEH6WmSTfBSItV8AAO6GShWdCJgC86XzMMQ4jAsSy9b80ncuGCEdL\n77mSCJftvtzpgT78XiGwvSL0hiJkx4bgTta0RHxhAoGBAOEi/T17uAcxd90g07Ie\n4KmAdzR08Vn6j6R+fIFfYYwQYdg5XGZQ+xztx7AyuC1yQd+cnvd9BhpZ86mkvLBl\nxWEBH7wQPi4Os9XImAFibidwuwYJ0yg8PxZqUAHFuk5ujw1G9I0hXp0iQKIWVIR0\naEhOw0+lLtnLm3txW/BmNpYg\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-30jgy@umass-diets.iam.gserviceaccount.com",
+  "client_id": "111027303884762023310",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-30jgy%40umass-diets.iam.gserviceaccount.com"
+}
+
