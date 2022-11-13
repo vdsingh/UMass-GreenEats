@@ -109,7 +109,7 @@ class FoodTableViewCell: UITableViewCell {
             
         } else if (sustainabilityRating == "B") {
             icon.image = UIImage(systemName: "b.circle.fill")
-            icon.tintColor = UIColor(hexString: "6cf542")
+            icon.tintColor = UIColor(hexString: "7dc930")
             
         } else if (sustainabilityRating == "C") {
             icon.image = UIImage(systemName: "c.circle.fill")

@@ -64,12 +64,6 @@ class MealPlanViewController: UIViewController {
           second: 0,
           of: now)!
         
-        let midnight_today = calendar.date (
-            bySettingHour: 23,
-            minute: 59,
-            second: 59,
-            of: now)!
-        
         if(Date() >= seven_am_today && Date() <= eleven_am_today) {
             selectMealType(mealType: "Break-fast", diningHall: diningHall)
         } else if(Date() > eleven_am_today && Date() <= four_thirty_pm_today) {
