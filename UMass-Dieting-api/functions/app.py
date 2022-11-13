@@ -45,7 +45,7 @@ def get_food(food_items, food_list):
             try:
                 trans_fat = float(trans_fat)
             except Exception as a:
-                pass
+                trans_fat = -1.0
 
             cholesterol = float(data.get_attribute('data-cholesterol')[:-2])
             sodium = float(data.get_attribute('data-sodium')[:-2])
@@ -55,7 +55,7 @@ def get_food(food_items, food_list):
             try:
                 sugar = float(sugar)
             except Exception as a:
-                pass
+                sugar = -1.0
 
             protein = float(data.get_attribute('data-protein')[:-1])
             dish_name = str(data.get_attribute('data-dish-name'))
