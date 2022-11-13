@@ -50,12 +50,12 @@ class FoodViewController: UIViewController {
         fatCalLabel.text = "\(food.fatCal ?? -1)"
         totalFatNumberLabel.text = "\(food.total_fat ?? -1)"
         saturatedFatNumberLabel.text = "\(food.sat_fat ?? -1)"
-        transFatNumberLabel.text = ""
+        transFatNumberLabel.text = "\(food.trans_fat ?? "")"
         cholesterolNumberLabel.text = "\(food.cholesterol ?? -1)"
         sodiumNumberLabel.text = "\(food.sodium ?? -1)"
         carbohydratesNumberLabel.text = "\(food.total_carbs ?? -1)"
         dietaryFiberNumberLabel.text = "\(food.dietary_fiber ?? -1)"
-        sugarNumberLabel.text = ""
+        sugarNumberLabel.text = "\(food.sugar ?? -1)"
         proteinNumberLabel.text = "\(food.protein ?? -1)"
     }
     
