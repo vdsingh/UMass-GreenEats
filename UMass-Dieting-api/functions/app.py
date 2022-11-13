@@ -18,7 +18,7 @@ def get_food(food_items, food_list):
             try:
                 healthfulness = int(healthfulness)
             except Exception as a:
-                pass
+                healthfulness = -1
         
             carbon_rating = data.get_attribute('data-carbon-list')
             try:
