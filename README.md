@@ -1,5 +1,11 @@
 # UMass-Dieting
 
+<img src="./images/launch-screen.jpg" height="500px">
+
+<img src="./images/recommended.jpeg" height="500px">
+
+<img src="./images/user-info.jpeg" height="500px">
+
 ## Inspiration 🍃
 Human activity in the last 500 years has brought extinction upon more than 800 species. 
 Up to 200 million people could be displaced by climate change by 2050. 
@@ -11,6 +17,8 @@ A statement from UMass:
 “As a global leader in research, entrepreneurship, and innovation, UMass Amherst must seize our unparalleled opportunity to limit the climate crisis in our own community and throughout the world and to educate the next generation of leaders in sustainability.” (https://www.umass.edu/carbon-neutrality/)
 
 ## What it does 📱
+
+
 
 ### Summary
 
