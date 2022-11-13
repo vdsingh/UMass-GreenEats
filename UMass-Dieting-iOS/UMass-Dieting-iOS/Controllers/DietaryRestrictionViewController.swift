@@ -85,7 +85,7 @@ class DietaryRestrictionViewController: UIViewController {
         if(isAntibioticFree) {
             dietaryRestrictions.append(K.antibioticFreeTag)
         }
-
+        
         userDefaults.set(dietaryRestrictions, forKey: K.dietaryTagsKey)
 
     }

@@ -31,10 +31,7 @@ class Sessions {
             do {
                 let decodedData = try JSONDecoder().decode([Food].self, from: data)
                     DispatchQueue.main.async {
-                        print("DATA: \(decodedData)")
                         State.shared.DiningFoods[diningHall]?[menu] = decodedData
-                        print("DATA 2: \( State.shared.DiningFoods[diningHall]?[menu])")
-
                         completion()
                     }
             } catch let jsonError as NSError {

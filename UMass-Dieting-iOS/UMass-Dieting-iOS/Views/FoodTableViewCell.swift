@@ -52,7 +52,7 @@ class FoodTableViewCell: UITableViewCell {
         labelsStack.translatesAutoresizingMaskIntoConstraints = false
         labelsStack.axis = .vertical
         labelsStack.distribution = .fillProportionally
-        //        labelsStack.alignment = .center
+        labelsStack.alignment = .leading
         labelsStack.spacing = 0
         return labelsStack
     }()
@@ -144,7 +144,6 @@ class FoodTableViewCell: UITableViewCell {
                 imagesStack.addArrangedSubview(vegetarianIcon)
                 vegetarianIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
                 vegetarianIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-                print("FOOD IS VEGETARIAN")
             }
             
             if (tags.contains(K.localTag)) {
