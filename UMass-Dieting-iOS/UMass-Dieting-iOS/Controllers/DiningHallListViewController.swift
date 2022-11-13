@@ -11,7 +11,9 @@ class DiningHallListViewController: UIViewController {
 
     @IBOutlet weak var diningHallTableView: UITableView!
     
-    var foods: [Food] = []
+    private var dataTask: URLSessionDataTask?
+    
+    var foods: [Food]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,20 +24,46 @@ class DiningHallListViewController: UIViewController {
         // Do any additional setup after loading the view.
         diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
         
-        fetchFoodData()
-        print(self.foods)
+        loadData(diningHall: "berkshire", menu: "dinner_menu")
     }
     
-    func fetchFoodData(){
-        Task{
-            do{
-                if let foods = try await Sessions.loadFoodData(diningHall: "berkshire" , menu: "dinner_menu"){
-                    self.foods = foods
-                }
-            } catch{
+    @objc private func loadData(diningHall: String, menu: String){
+        
+        print("RESPONSE")
+        
+        guard let url = URL(string: "\(Constants.API.API_URL)api/foods/get/\(diningHall)/\(menu)") else {
+            print("url not found")
+            return
+        }
+        
+        print("RESPONSE")
+        
+        dataTask?.cancel()
+        
+        dataTask = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
+            
+            guard let data = data else {
                 return
             }
-        }
+            do {
+                let decodedData = try JSONDecoder().decode([Food].self, from: data)
+                    DispatchQueue.main.async {
+                        // TODO: added dining to state and reload view
+                        State.shared.DiningFoods[diningHall]?[menu] = decodedData
+                        
+                    }
+            }catch let jsonError as NSError{
+                print("ERRROR")
+                print(String(describing: jsonError))
+                print(jsonError.localizedDescription)
+            }
+
+        })
+        
+        dataTask?.resume()
+        
+        
+        
     }
 
     /*

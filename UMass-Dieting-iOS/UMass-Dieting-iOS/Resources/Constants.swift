@@ -9,6 +9,6 @@ import Foundation
 
 class Constants {
     struct API{
-        static let API_URL = "http://localhost:5001/umass-diets/us-central1/app/"
+        static let API_URL = "https://us-central1-umass-diets.cloudfunctions.net/app/"
     }
 }
