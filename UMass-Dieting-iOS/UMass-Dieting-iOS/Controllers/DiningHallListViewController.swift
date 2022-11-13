@@ -25,34 +25,6 @@ class DiningHallListViewController: UIViewController {
 //        loadData(diningHall: "berkshire", menu: "dinner_menu")
     }
     
-    @objc private func loadData(diningHall: String, menu: String, completion: @escaping () -> Void){
-        guard let url = URL(string: "\(Constants.API.API_URL)api/foods/get/\(diningHall)/\(menu)") else {
-            print("$ERROR: url not found")
-            return
-        }
-                
-        dataTask?.cancel()
-        dataTask = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
-            guard let data = data else {
-                return
-            }
-            do {
-                let decodedData = try JSONDecoder().decode([Food].self, from: data)
-                    DispatchQueue.main.async {
-                        print("DATA: \(decodedData)")
-                        State.shared.DiningFoods[diningHall]?[menu] = decodedData
-                        print("DATA 2: \( State.shared.DiningFoods[diningHall]?[menu])")
-
-                        completion()
-                    }
-            } catch let jsonError as NSError {
-                print("$ERROR: \(jsonError)")
-                print(String(describing: jsonError))
-                print(jsonError.localizedDescription)
-            }
-        })
-        dataTask?.resume()
-    }
 }
 
 extension DiningHallListViewController: UITableViewDataSource {
@@ -86,7 +58,8 @@ extension DiningHallListViewController: UITableViewDelegate {
         guard let selectedDiningHall = self.selectedDiningHall else {
             fatalError("$ERROR: Selected dining hall is nil")
         }
-        loadData(diningHall: selectedDiningHall.key, menu: "lunch_menu") {
+        
+        Sessions.loadFoodData(diningHall: selectedDiningHall.key, menu: "lunch_menu") {
             self.performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
         }
         tableView.deselectRow(at: indexPath, animated: true)
