@@ -13,4 +13,5 @@ struct DiningHall {
     let hoursOfOperation: String
     
     let colorHex: String
+    let imageName: String
 }

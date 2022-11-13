@@ -14,7 +14,6 @@ class FoodTableViewCell: UITableViewCell {
         didSet {
             foodTitle.attributedText = food?.dish_name?.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
             foodSubTitle.text = food?.serving_size
-//            configureSustainabilityImage(sustainabilityRating: food?.carbon_rating ?? "Unknown")
             loadTagImages()
         }
     }
@@ -31,14 +30,6 @@ class FoodTableViewCell: UITableViewCell {
         foodSubTitle.textAlignment = .left
         return foodSubTitle
     }()
-    
-//    let sustainabilityImage: UIImageView = {
-//        let sustainabilityImage = UIImageView()
-//        sustainabilityImage.translatesAutoresizingMaskIntoConstraints = false
-//        sustainabilityImage.image = UIImage(systemName: "leaf")
-//        sustainabilityImage.tintColor = .green
-//        return sustainabilityImage
-//    }()
     
     let imagesStack: UIStackView = {
         let imagesStack = UIStackView()

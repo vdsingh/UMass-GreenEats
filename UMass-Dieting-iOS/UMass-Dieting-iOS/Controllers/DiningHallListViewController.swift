@@ -53,14 +53,11 @@ extension DiningHallListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedDiningHall = State.shared.diningHalls[indexPath.row]
-        guard let selectedDiningHall = self.selectedDiningHall else {
-            fatalError("$ERROR: Selected dining hall is nil")
-        }
         self.performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 230
     }
 }

@@ -10,10 +10,10 @@ class State {
     static let shared = State()
     
     var diningHalls: [DiningHall] = [
-        DiningHall(name: "Worcester Commons", key: "worcester", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 12:00 AM", colorHex: K.orangeColorHex),
-        DiningHall(name: "Berkshire Commons", key: "berkshire", daysOfOperation: "Monday - Sunday", hoursOfOperation: "11:00 AM - 12:00 AM", colorHex: K.orangeColorHex),
-        DiningHall(name: "Hampshire Commons", key: "hampshire", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 9:00 PM", colorHex: K.orangeColorHex),
-        DiningHall(name: "Franklin Commons", key: "franklin", daysOfOperation: "Monday - Sunday", hoursOfOperation: "7:00 AM - 9:00 PM", colorHex: K.orangeColorHex)
+        DiningHall(name: "Worcester Commons", key: "worcester", daysOfOperation: "Mon-Sun", hoursOfOperation: "7:00AM - 12:00AM", colorHex: K.orangeColorHex, imageName: "worcester_dining_hall.jpeg"),
+        DiningHall(name: "Berkshire Commons", key: "berkshire", daysOfOperation: "Mon-Sun", hoursOfOperation: "11:00AM - 12:00AM", colorHex: K.orangeColorHex, imageName: "berkshire_dining_hall.jpeg"),
+        DiningHall(name: "Hampshire Commons", key: "hampshire", daysOfOperation: "Mon-Sun", hoursOfOperation: "7:00AM - 9:00PM", colorHex: K.orangeColorHex, imageName: "hampshire_dining_hall.jpeg"),
+        DiningHall(name: "Franklin Commons", key: "franklin", daysOfOperation: "Mon-Sun", hoursOfOperation: "7:00 AM - 9:00 PM", colorHex: K.orangeColorHex, imageName: "franklin_dining_hall.jpeg")
         
     ]
     
