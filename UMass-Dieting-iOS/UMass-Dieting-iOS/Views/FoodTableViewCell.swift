@@ -12,6 +12,7 @@ class FoodTableViewCell: UITableViewCell {
     private let iconSize: CGFloat = 30
     var food: Food? = nil {
         didSet {
+            prepareForReuse()
             foodTitle.attributedText = food?.dish_name?.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
             foodSubTitle.text = food?.serving_size
             configureSustainabilityImage(sustainabilityRating: food?.carbon_rating ?? "Unknown")
@@ -127,9 +128,16 @@ class FoodTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        
+    }
+    
     func loadTagImages() {
         guard let food = self.food else {
             fatalError("$ERROR: Food is nil")
+        }
+        for view in imagesStack.subviews{
+            view.removeFromSuperview()
         }
         
         if let tags = food.tags {
