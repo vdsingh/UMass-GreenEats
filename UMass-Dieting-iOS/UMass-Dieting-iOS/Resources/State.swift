@@ -18,9 +18,9 @@ class State {
     ]
     
     var DiningFoods: [String: [String:[Food]]] = [
-        "berkshire": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": []],
-        "franklin": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": []],
-        "worcester": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": []],
-        "hampshire": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": []]
+        "berkshire": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": [], "latenight_menu": []],
+        "franklin": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": [], "latenight_menu": []],
+        "worcester": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": [], "latenight_menu": []],
+        "hampshire": ["breakfast_menu": [], "lunch_menu": [], "dinner_menu": [], "latenight_menu": []]
     ]
 }

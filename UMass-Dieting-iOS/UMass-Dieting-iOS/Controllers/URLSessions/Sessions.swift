@@ -14,6 +14,7 @@ class Sessions {
     public static func loadFoodData(diningHall: String, menu: String, completion: @escaping () -> Void){
         
         if((State.shared.DiningFoods[diningHall]?[menu]?.count)! > 0){
+            completion()
             return
         }
         
@@ -45,6 +46,3 @@ class Sessions {
         dataTask?.resume()
     }
 }
-//    else {
-//            fatalError("$ERROR: SOMETHING WRONG WITH URL COMPONENTS")
-//        }

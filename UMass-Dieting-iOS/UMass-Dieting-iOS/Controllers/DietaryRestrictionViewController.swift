@@ -20,9 +20,7 @@ class DietaryRestrictionViewController: UIViewController {
     var isSustainable: Bool = false
     var isWholeGrain: Bool = false
     var isAntibioticFree: Bool = false
-    
-    var dietaryRestrictions: [String] = []
-    
+        
     override func viewDidLoad() {
         buttonStack.arrangedSubviews.forEach({
             let button = $0 as! UIButton
@@ -67,6 +65,8 @@ class DietaryRestrictionViewController: UIViewController {
     }
     
     @IBAction func nextButtonClicked(_ sender: UIButton) {
+        var dietaryRestrictions: [String] = []
+
         if(isVeg) {
             dietaryRestrictions.append("con-veg")
         }
@@ -85,7 +85,7 @@ class DietaryRestrictionViewController: UIViewController {
         if(isAntibioticFree) {
             dietaryRestrictions.append("con-antibfr")
         }
-        print("DIETARY RESTRICTIONS: \(dietaryRestrictions)")
+
         userDefaults.set(dietaryRestrictions, forKey: K.dietaryTagsKey)
 
     }

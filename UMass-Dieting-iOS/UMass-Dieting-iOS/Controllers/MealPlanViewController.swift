@@ -20,6 +20,8 @@ class MealPlanViewController: UIViewController {
     @IBOutlet weak var foodsTableView: UITableView!
     @IBOutlet weak var mealTimesStack: UIStackView!
     
+    var mealTypeKeyDictionary:[String: String] = ["Lunch": "lunch_menu", "Break-fast": "breakfast_menu", "Dinner": "dinner_menu", "Late Night": "latenight_menu"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +32,13 @@ class MealPlanViewController: UIViewController {
         guard let diningHall = self.diningHall else {
             fatalError("$ERROR: Dining hall is nil")
         }
-        selectMealType(mealType: "Lunch", diningHall: diningHall)
+        self.title = diningHall.name
+        selectMealType(mealType: "Break-fast", diningHall: diningHall)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        mealTimesStack.
+        selectMealType(mealType: "Break-fast", diningHall: diningHall)
     }
     
     @IBAction func newTimeClicked(_ sender: UIButton) {
@@ -46,16 +54,18 @@ class MealPlanViewController: UIViewController {
                 button.tintColor = .white
             } else {
                 button.backgroundColor = .systemBackground
-                button.titleLabel?.textColor = .link
+                button.tintColor = .link
                 button.layer.borderColor = UIColor.link.cgColor
                 button.layer.cornerRadius = 10
                 button.layer.borderWidth = 1
             }
         })
-        mealPlan = MealPlan(foods: State.shared.DiningFoods[diningHall.key]?["lunch_menu"] ?? [], calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
-        foodsTableView.reloadData()
         
-        print("meal plan foods: \(mealPlan?.foods)")
+        Sessions.loadFoodData(diningHall: diningHall.key, menu:  mealTypeKeyDictionary[mealType]!) {
+            print("Completion called!")
+            self.mealPlan = MealPlan(foods: State.shared.DiningFoods[diningHall.key]?[self.mealTypeKeyDictionary[mealType]!] ?? [], calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
+            self.foodsTableView.reloadData()
+        }
     }
 }
 

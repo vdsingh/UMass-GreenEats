@@ -59,7 +59,7 @@ extension DiningHallListViewController: UITableViewDelegate {
             fatalError("$ERROR: Selected dining hall is nil")
         }
         
-        Sessions.loadFoodData(diningHall: selectedDiningHall.key, menu: "lunch_menu") {
+        Sessions.loadFoodData(diningHall: selectedDiningHall.key, menu: "breakfast_menu") {
             self.performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
         }
         tableView.deselectRow(at: indexPath, animated: true)
