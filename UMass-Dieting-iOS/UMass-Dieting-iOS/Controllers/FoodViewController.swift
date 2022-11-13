@@ -36,7 +36,7 @@ class FoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nutritionLabelView.layer.borderWidth = 3
-        nutritionLabelView.layer.borderColor = UIColor.black.cgColor
+        nutritionLabelView.layer.borderColor = UIColor.white.cgColor
         updateNutritionLabel()
     }
     
