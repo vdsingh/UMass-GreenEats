@@ -10,8 +10,14 @@ import UIKit
 class K {
     static let vegetarianImage = UIImage(systemName: "leaf.fill")
     static let localImage = UIImage(systemName: "map.fill")
+    static let halalImage = UIImage(systemName: "h.fill")
+    static let sustainableImage = UIImage(systemName: "tree.fill")
+    static let wholeGrainImage = UIImage(systemName: "sun.fill")
+    static let antibioticFreeImage = UIImage(systemName: "allergens.fill")
+
     
     static let dietaryTagsKey = "diet-tags"
+    
     static let vegTag = "con-veg"
     static let halalTag = "con-halal"
     static let localTag = "con-loc"

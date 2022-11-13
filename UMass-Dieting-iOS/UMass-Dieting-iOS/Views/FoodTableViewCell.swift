@@ -12,7 +12,6 @@ class FoodTableViewCell: UITableViewCell {
     private let iconSize: CGFloat = 30
     var food: Food? = nil {
         didSet {
-            prepareForReuse()
             foodTitle.attributedText = food?.dish_name?.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
             foodSubTitle.text = food?.serving_size
             configureSustainabilityImage(sustainabilityRating: food?.carbon_rating ?? "Unknown")
@@ -22,12 +21,12 @@ class FoodTableViewCell: UITableViewCell {
     
     let foodTitle: UILabel = {
         let foodTitle = UILabel()
+        foodTitle.numberOfLines = 0
         return foodTitle
     }()
     
     let foodSubTitle: UILabel = {
         let foodSubTitle = UILabel()
-        
         return foodSubTitle
     }()
     
@@ -80,6 +79,7 @@ class FoodTableViewCell: UITableViewCell {
         labelsStack.addArrangedSubview(foodTitle)
         labelsStack.addArrangedSubview(foodSubTitle)
         
+//        labelsStack.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 50).isActive = true
         labelsStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         sustainabilityImage.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
@@ -128,10 +128,6 @@ class FoodTableViewCell: UITableViewCell {
         }
     }
     
-    override func prepareForReuse() {
-        
-    }
-    
     func loadTagImages() {
         guard let food = self.food else {
             fatalError("$ERROR: Food is nil")
@@ -153,11 +149,42 @@ class FoodTableViewCell: UITableViewCell {
             
             if (tags.contains(K.localTag)) {
                 let localIcon: UIImageView = UIImageView(image: K.localImage)
+                localIcon.tintColor = .orange
+                imagesStack.addArrangedSubview(localIcon)
+                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+            }
+            
+            if (tags.contains(K.halalTag)) {
+                let localIcon: UIImageView = UIImageView(image: K.halalImage)
+                localIcon.tintColor = .systemPurple
+                imagesStack.addArrangedSubview(localIcon)
+                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+            }
+            
+            if (tags.contains(K.sustainableTag)) {
+                let localIcon: UIImageView = UIImageView(image: K.sustainableImage)
+                localIcon.tintColor = .systemGreen
+                imagesStack.addArrangedSubview(localIcon)
+                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+            }
+            
+            if (tags.contains(K.wholeGrainTag)) {
+                let localIcon: UIImageView = UIImageView(image: K.wholeGrainImage)
                 localIcon.tintColor = .systemYellow
                 imagesStack.addArrangedSubview(localIcon)
                 localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
                 localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-                //            print("FOOD IS VEGETARIAN")
+            }
+            
+            if (tags.contains(K.antibioticFreeTag)) {
+                let localIcon: UIImageView = UIImageView(image: K.antibioticFreeImage)
+                localIcon.tintColor = .systemBlue
+                imagesStack.addArrangedSubview(localIcon)
+                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
             }
         }
     }
