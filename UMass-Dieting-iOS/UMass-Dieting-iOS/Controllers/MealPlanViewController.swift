@@ -11,9 +11,8 @@ class MealPlanViewController: UIViewController {
     
     var selectedFood: Food? = nil
     
-    var mealPlan: MealPlan? = MealPlan(foods: [
-
-    ], calories: 25, saturatedFat: 30, transFat: 35, cholesterol: 40, sodium: 20, total_carbs: 20, dietary_fiber: 30, sugars: 20, protein: 20)
+    var foods: [[Food]] = [[], []]
+    let headers: [String] = ["Recommended Foods", "All Foods"]
     
     var diningHall: DiningHall!
     
@@ -65,40 +64,51 @@ class MealPlanViewController: UIViewController {
         
         spinner.isHidden = false
         errorLabel.isHidden = true
-        self.mealPlan?.foods = []
+        self.foods = [[],[]]
         foodsTableView.reloadData()
         Sessions.loadFoodData(diningHall: diningHall.key, menu:  mealTypeKeyDictionary[mealType]!) {
             print("Completion called!")
-            self.spinner.isHidden = true
-            self.mealPlan = MealPlan(foods: State.shared.DiningFoods[diningHall.key]?[self.mealTypeKeyDictionary[mealType]!] ?? [], calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
-            if(self.mealPlan?.foods.count == 0){
-                self.errorLabel.isHidden = false
-            }
-            self.foodsTableView.reloadData()
+            self.foods[1] = State.shared.DiningFoods[diningHall.key]?[self.mealTypeKeyDictionary[mealType]!] ?? []
+            
+            let body = RecommendationBody(
+                tag_preferences: UserDefaults.standard.value(forKey: K.dietaryTagsKey) as! [String],
+                recommended_calories: UserDefaults.standard.value(forKey: K.caloriesKey) as! Float,
+                dining_hall: diningHall.key,
+                menu: self.mealTypeKeyDictionary[mealType]!)
+            Sessions.loadRecommendation(recommendationBody: body) {
+                    if let recommendation = State.shared.recommendationFoods[diningHall.key]![self.mealTypeKeyDictionary[mealType]!] as? Recommendation {
+                        self.foods[0] = recommendation.dishes ?? []
+                    }
+                    self.spinner.isHidden = true
+                    if(self.foods[0].count == 0 && self.foods[1].count == 0){
+                        self.errorLabel.isHidden = false
+                    }
+                    self.foodsTableView.reloadData()
+                }
         }
     }
 }
 
 extension MealPlanViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(foods[0].count == 0 && foods[1].count == 0) {
+            return ""
+        }
+        return headers[section]
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return foods.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let mealPlan = self.mealPlan else {
-            fatalError("$ERROR: Meal plan is nil!")
-        }
-        print("FOOD COUNT: \(mealPlan.foods.count)")
-//        tableView.reloadData()
-        return mealPlan.foods.count
+        return foods[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let mealPlan = self.mealPlan else {
-            fatalError("$ERROR: Meal plan is nil!")
-        }
         if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.reuseIdentifier, for: indexPath) as? FoodTableViewCell {
-            let food: Food = mealPlan.foods[indexPath.row]
+            let food: Food = foods[indexPath.section][indexPath.row]
             cell.food = food
             cell.accessoryType = .disclosureIndicator
             return cell
@@ -109,6 +119,7 @@ extension MealPlanViewController: UITableViewDataSource {
 }
 
 extension MealPlanViewController: UITableViewDelegate {
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FoodViewController {
             guard let food = selectedFood else {
@@ -119,7 +130,7 @@ extension MealPlanViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedFood = mealPlan?.foods[indexPath.row]
+        self.selectedFood = foods[indexPath.section][indexPath.row]
         performSegue(withIdentifier: "ToFoodViewController", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }

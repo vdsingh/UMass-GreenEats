@@ -45,20 +45,19 @@ class Sessions {
     
     public static func loadRecommendation(recommendationBody: RecommendationBody, completion: @escaping () -> Void){
         
-        guard let url = URL(string: "\(Constants.API.API_URL)api/recommendations/create")else {
+        guard let url = URL(string: "\(Constants.API.API_URL)api/recommendations/create") else {
             print("URL not found")
             completion()
             return
         }
         
-        do{
+        do {
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "POST"
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.httpBody = try JSONEncoder().encode(recommendationBody)
             
             dataTask?.cancel()
-            
             dataTask = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, res, error in
                     
                 guard let data = data else {
