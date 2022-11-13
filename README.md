@@ -77,7 +77,7 @@ We solved this issue by utilizing the debugging tools at our disposal and budget
 
 ## Accomplishments that we're proud of
 
-We're very proud of our use of multiple cloud services. Although it was a bummer to find out that our scraper was incompatible with Google Cloud Functions, we were still persistent on getting it to run on the cloud. I believe it was a great accomplishment to work around this roadblock by incorporating AWS alongside Google Cloud.
+We're very proud of our use of multiple cloud services. Although it was a bummer to find out that our scraper was incompatible with Google Cloud Functions, we were still persistent on getting it to run on the cloud. We believe it was a great accomplishment to work around this roadblock by incorporating AWS alongside Google Cloud.
 
 
 We're also very proud of our iOS frontend. A lot of work went into designing, mocking, and storyboarding to make our app look exactly the way that we wanted it to. 
@@ -98,7 +98,7 @@ Our plan for what's next for UMass GreenEats will eventually be to:
 * Algorithmic improvements with runtime and caching
 * Feature for tracking meals and analytics
 
-
+## Conclusion
 Overall, there was a lot of cup ramen, coffee, and junk food that allowed us to keep on coding. Thank you again to all of our sponsors - and as a team of all graduating seniors, (we'll keep on hacking :) ).
 
 <div>
