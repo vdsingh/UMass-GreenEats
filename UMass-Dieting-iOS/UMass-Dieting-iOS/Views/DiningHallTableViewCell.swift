@@ -35,7 +35,7 @@ class DiningHallTableViewCell: UITableViewCell {
         infoStackView.axis = .vertical
         infoStackView.distribution = .fillProportionally
         infoStackView.alignment = .leading
-        infoStackView.spacing = 0
+        infoStackView.spacing = 5
         return infoStackView
     }()
     
@@ -52,6 +52,7 @@ class DiningHallTableViewCell: UITableViewCell {
             diningHallTitleLabel.attributedText = diningHall?.name.withBoldText(text: diningHall?.name ?? "", fontSize: 22)
             hoursOfOperationLabel.text = diningHall?.hoursOfOperation
             daysOfOperationLabel.text = diningHall?.daysOfOperation
+            container.backgroundColor = UIColor(hexString: diningHall?.colorHex ?? "ffffff")
         }
     }
     
