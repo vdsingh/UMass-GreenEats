@@ -12,10 +12,10 @@ class MealPlanViewController: UIViewController {
     var selectedFood: Food? = nil
     
     var mealPlan: MealPlan? = MealPlan(foods: [
-//        Food(name: "Chicken", servingString: "16oz", servingSize: "2oz", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 1, tags: []),
-//        Food(name: "Broccoli", servingString: "16oz", servingSize: "3 Pieces", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 2, tags: ["vegetarian"]),
-//        Food(name: "Rice", servingString: "16oz", servingSize: "15 Grains", calories: 0, fatCal: 0, totalFat: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, totalCarbs: 0, dietaryFiber: 0, sugars: 0, protein: 0, carbonFootprint: 3, tags: ["vegetarian", "local"])
+
     ], calories: 25, saturatedFat: 30, transFat: 35, cholesterol: 40, sodium: 20, total_carbs: 20, dietary_fiber: 30, sugars: 20, protein: 20)
+    
+    var diningHall: DiningHall!
     
     @IBOutlet weak var foodsTableView: UITableView!
     @IBOutlet weak var mealTimesStack: UIStackView!
@@ -27,14 +27,17 @@ class MealPlanViewController: UIViewController {
         foodsTableView.dataSource = self
         foodsTableView.register(FoodTableViewCell.self, forCellReuseIdentifier: FoodTableViewCell.reuseIdentifier)
         
-        selectMealType(mealType: "Lunch")
+        guard let diningHall = self.diningHall else {
+            fatalError("$ERROR: Dining hall is nil")
+        }
+        selectMealType(mealType: "Lunch", diningHall: diningHall)
     }
     
     @IBAction func newTimeClicked(_ sender: UIButton) {
-        selectMealType(mealType: sender.titleLabel?.text ?? "")
+        selectMealType(mealType: sender.titleLabel?.text ?? "", diningHall: self.diningHall)
     }
     
-    func selectMealType(mealType: String) {
+    func selectMealType(mealType: String, diningHall: DiningHall) {
         mealTimesStack.arrangedSubviews.forEach({
             let button = $0 as! UIButton
             if(button.titleLabel?.text == mealType) {
@@ -49,9 +52,7 @@ class MealPlanViewController: UIViewController {
                 button.layer.borderWidth = 1
             }
         })
-        mealPlan = MealPlan(foods: State.shared.DiningFoods["berkshire"]?["lunch_menu"] ?? [],
-    
-    calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
+        mealPlan = MealPlan(foods: State.shared.DiningFoods[diningHall.key]?["lunch_menu"] ?? [], calories: 0, saturatedFat: 0, transFat: 0, cholesterol: 0, sodium: 0, total_carbs: 0, dietary_fiber: 0, sugars: 0, protein: 0)
         foodsTableView.reloadData()
         
         print("meal plan foods: \(mealPlan?.foods)")

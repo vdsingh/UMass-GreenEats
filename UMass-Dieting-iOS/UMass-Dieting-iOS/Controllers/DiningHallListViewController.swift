@@ -12,6 +12,7 @@ class DiningHallListViewController: UIViewController {
     private var dataTask: URLSessionDataTask?
     
     var foods: [Food]? = []
+    var selectedDiningHall: DiningHall? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,9 +72,21 @@ extension DiningHallListViewController: UITableViewDataSource {
 }
 
 extension DiningHallListViewController: UITableViewDelegate {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MealPlanViewController {
+            guard let selectedDiningHall = self.selectedDiningHall else {
+                fatalError("$ERROR: Selected dining hall is nil")
+            }
+            destination.diningHall = selectedDiningHall
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let diningHall: DiningHall = State.shared.diningHalls[indexPath.row]
-        loadData(diningHall: diningHall.key, menu: "lunch_menu") {
+        selectedDiningHall = State.shared.diningHalls[indexPath.row]
+        guard let selectedDiningHall = self.selectedDiningHall else {
+            fatalError("$ERROR: Selected dining hall is nil")
+        }
+        loadData(diningHall: selectedDiningHall.key, menu: "lunch_menu") {
             self.performSegue(withIdentifier: "ToMealPlanViewController", sender: self)
         }
         tableView.deselectRow(at: indexPath, animated: true)
