@@ -1,4 +1,5 @@
-# UMass-Dieting
+# UMass-GreenEats
+Devpost Link: https://devpost.com/software/umass-greeneats
 
 <div>
 <img src="./images/launch-screen.jpg" height="500px">
@@ -8,8 +9,6 @@
 <img src="./images/user-info.jpeg" height="500px">
 
 </div>
-
-Devpost Link: https://devpost.com/software/umass-greeneats
 
 ## Inspiration 🍃
 Human activity in the last 500 years has brought extinction upon more than 800 species. 
