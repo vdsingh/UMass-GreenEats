@@ -43,7 +43,6 @@ class SignUpViewController: UIViewController {
         return true
     }
     
-    
     @IBAction func signUpButtonTapped(_ sender: Any) {
         let userFormViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserInfoVC" ) as? UserInfoFormViewController
         self.view.window?.rootViewController = userFormViewController

@@ -80,8 +80,6 @@ class FoodTableViewCell: UITableViewCell {
         leftStack.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
 
         leftStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        
-        
     }
     
     required init?(coder: NSCoder) {
@@ -124,9 +122,11 @@ class FoodTableViewCell: UITableViewCell {
         guard let food = self.food else {
             fatalError("$ERROR: Food is nil")
         }
+        
         for view in imagesStack.subviews{
             view.removeFromSuperview()
         }
+        
         configureSustainabilityImage(sustainabilityRating: food.carbon_rating ?? "")
                 
         if let tags = food.tags {

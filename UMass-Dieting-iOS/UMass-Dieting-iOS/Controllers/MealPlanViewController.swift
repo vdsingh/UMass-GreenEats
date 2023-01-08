@@ -8,13 +8,11 @@
 import Foundation
 import UIKit
 class MealPlanViewController: UIViewController {
-    
     var selectedFood: Food? = nil
     var foods: [[Food]] = [[], []]
     var recommendation: Recommendation?
     let headers: [String] = ["Recommended Foods", "All Foods"]
     var diningHall: DiningHall!
-    
     var mealTime: String = "Break-fast"
     
     @IBOutlet weak var foodsTableView: UITableView!

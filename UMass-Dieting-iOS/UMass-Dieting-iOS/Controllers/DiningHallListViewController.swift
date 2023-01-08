@@ -19,10 +19,8 @@ class DiningHallListViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = "Dining Halls"
         diningHallTableView.delegate = self
         diningHallTableView.dataSource = self
-
         diningHallTableView.register(DiningHallTableViewCell.self, forCellReuseIdentifier: DiningHallTableViewCell.reuseIdentifier)
     }
-    
 }
 
 extension DiningHallListViewController: UITableViewDataSource {

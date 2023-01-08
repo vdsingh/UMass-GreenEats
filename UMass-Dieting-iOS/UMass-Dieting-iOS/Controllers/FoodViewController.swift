@@ -12,7 +12,6 @@ class FoodViewController: UIViewController {
 
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var servingSizeLabel: UILabel!
-    
     @IBOutlet weak var nutritionLabelView: UIView!
     @IBOutlet weak var caloriesNumberLabel: UILabel!
     @IBOutlet weak var fatCalLabel: UILabel!

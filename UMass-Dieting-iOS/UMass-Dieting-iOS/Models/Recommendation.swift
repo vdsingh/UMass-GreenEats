@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-
 struct RecommendationBody: Codable{
     var tag_preferences: [String]
     var recommended_calories: Float

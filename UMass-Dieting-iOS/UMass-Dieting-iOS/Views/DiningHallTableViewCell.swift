@@ -16,13 +16,6 @@ class DiningHallTableViewCell: UITableViewCell {
         return diningHallTitleLabel
     }()
     
-//    var hoursOfOperationLabel: UILabel = {
-//        let hoursOfOperationLabel = UILabel()
-//        hoursOfOperationLabel.textColor = .white
-//        return hoursOfOperationLabel
-//
-//    }()
-    
     var daysOfOperationLabel: UILabel = {
         let daysOfOperationLabel = UILabel()
         daysOfOperationLabel.textColor = .white
@@ -83,9 +76,7 @@ class DiningHallTableViewCell: UITableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        super.awakeFromNib()
-        
+        super.init(style: style, reuseIdentifier: reuseIdentifier)        
         contentView.addSubview(container)
         
         container.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
@@ -98,9 +89,6 @@ class DiningHallTableViewCell: UITableViewCell {
         masterStackView.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 15).isActive = true
         masterStackView.rightAnchor.constraint(equalTo: container.rightAnchor, constant: -15).isActive = true
         masterStackView.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
-//        masterStackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -30).isActive = true
-//        masterStackView.topAnchor.constraint(equalTo: container.topAnchor, constant: 30).isActive = true
-        
         masterStackView.addArrangedSubview(diningHallImageView)
 
         
@@ -115,16 +103,10 @@ class DiningHallTableViewCell: UITableViewCell {
         infoStackView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         infoStackView.leftAnchor.constraint(equalTo: masterStackView.leftAnchor, constant: 20).isActive = true
         infoStackView.rightAnchor.constraint(equalTo: masterStackView.rightAnchor, constant: -20).isActive = true
-//        infoStackView.topAnchor.constraint(equalTo: diningHallImageView.bottomAnchor, constant: 20).isActive = true
         infoStackView.bottomAnchor.constraint(equalTo: masterStackView.bottomAnchor, constant: 20).isActive = true
-        
-//        infoStackView.backgroundColor = .blue
-        
+                
         infoStackView.addArrangedSubview(diningHallTitleLabel)
-//        infoStackView.addArrangedSubview(hoursOfOperationLabel)
         infoStackView.addArrangedSubview(daysOfOperationLabel)
-        
-//        diningHallTitleLabel.topAnchor.constraint(equalTo: diningHallImageView.bottomAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

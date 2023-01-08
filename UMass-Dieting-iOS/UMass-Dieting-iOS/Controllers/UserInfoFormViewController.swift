@@ -14,13 +14,11 @@ class UserInfoFormViewController: UIViewController {
     @IBOutlet weak var bodyweightTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
-    
     @IBOutlet weak var genderPopUpButton: UIButton!
     @IBOutlet weak var activityLevelPopUpButton: UIButton!
     @IBOutlet weak var dietGoalPopUpButton: UIButton!
-    
     @IBOutlet weak var nextButton: UIButton!
-
+    
     private var gender: String = "Select a Gender"
     private var activityLevel: String = "Select an Activity Level"
     private var goal: String = "Select your Goal"
@@ -32,7 +30,6 @@ class UserInfoFormViewController: UIViewController {
         
         configurePopUpButtons()
         nextButton.isEnabled = false
-        
         ageTextField.delegate = self
         bodyweightTextField.delegate = self
         heightTextField.delegate = self
@@ -40,7 +37,6 @@ class UserInfoFormViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    
     
     func configurePopUpButtons() {
         let genderSelectionClosure = { (action: UIAction) in
@@ -108,7 +104,7 @@ class UserInfoFormViewController: UIViewController {
             userDefaults.set(heightText, forKey: K.heightKey)
             userDefaults.set(ageText, forKey: K.ageKey)
             userDefaults.set(bodyweightText, forKey: K.weightKey)
-
+            
             return ageText.isNumber && heightText.isNumber && bodyweightText.isNumber
         } else {
             fatalError("$ERROR: Textfield texts are nil.")
@@ -119,10 +115,8 @@ class UserInfoFormViewController: UIViewController {
         view.endEditing(true)
     }
     
-//    For men: BMR = 66.5 + (13.75 * weight in kg) + (5.003 * height in cm) - (6.75 * age)
-//
-//    For women: BMR = 655.1 + (9.563 * weight in kg) + (1.850 * height in cm) - (4.676 * age)
-    
+    // For men: BMR = 66.5 + (13.75 * weight in kg) + (5.003 * height in cm) - (6.75 * age)
+    // For women: BMR = 655.1 + (9.563 * weight in kg) + (1.850 * height in cm) - (4.676 * age)
     private func calculateCalories() -> Float {
         if(!verifyNumberFields()) {
             return -1
@@ -136,7 +130,7 @@ class UserInfoFormViewController: UIViewController {
         } else {
             BMR = 655.1 + (9.563 * weightKG) + (1.850 * heightCM) - (4.676 * ageYears)
         }
-
+        
         switch activityLevel {
         case "Not Active":
             return BMR * 1.2

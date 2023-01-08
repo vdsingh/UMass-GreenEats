@@ -22,7 +22,7 @@ class Sessions {
             print("$ERROR: url not found")
             return
         }
-                
+        
         dataTask?.cancel()
         dataTask = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             guard let data = data else {
@@ -30,10 +30,10 @@ class Sessions {
             }
             do {
                 let decodedData = try JSONDecoder().decode([Food].self, from: data)
-                    DispatchQueue.main.async {
-                        State.shared.DiningFoods[diningHall]?[menu] = decodedData
-                        completion()
-                    }
+                DispatchQueue.main.async {
+                    State.shared.DiningFoods[diningHall]?[menu] = decodedData
+                    completion()
+                }
             } catch let jsonError as NSError {
                 print("$ERROR: \(jsonError)")
                 print(String(describing: jsonError))
@@ -44,8 +44,6 @@ class Sessions {
     }
     
     public static func loadRecommendation(recommendationBody: RecommendationBody, completion: @escaping () -> Void){
-
-        
         if(State.shared.recommendationFoods[recommendationBody.dining_hall]?[recommendationBody.menu]! != nil){
             print("EEEEE")
             completion()
@@ -66,29 +64,28 @@ class Sessions {
             
             dataTask?.cancel()
             dataTask = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, res, error in
-                    
+                
                 guard let data = data else {
                     return
                 }
                 
-                do{
+                do {
                     let decodedData = try  JSONDecoder().decode(Recommendation.self, from: data)
                     DispatchQueue.main.async {
                         State.shared.recommendationFoods[recommendationBody.dining_hall]?[recommendationBody.menu] = decodedData
                         completion()
                         print("DATA \(decodedData)")
                     }
-                }
-                catch let jsonError as NSError{
+                } catch let jsonError as NSError {
                     print("$ERROR: \(jsonError)")
                     print(String(describing: jsonError))
                     print(jsonError.localizedDescription)
                 }
                 
             })
-            
             dataTask?.resume()
         }
+        
         catch let jsonError as NSError {
             print("$ERROR: \(jsonError)")
             print(String(describing: jsonError))

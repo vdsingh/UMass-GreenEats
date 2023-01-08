@@ -11,7 +11,6 @@
 		7430CC1A2920F3DC0085A6A2 /* LaunchScreenGIF.png in Resources */ = {isa = PBXBuildFile; fileRef = 7430CC192920F3DC0085A6A2 /* LaunchScreenGIF.png */; };
 		7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C80F291F5B270084DB78 /* AppDelegate.swift */; };
 		7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C811291F5B270084DB78 /* SceneDelegate.swift */; };
-		7435C814291F5B270084DB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435C813291F5B270084DB78 /* ViewController.swift */; };
 		7435C817291F5B270084DB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C815291F5B270084DB78 /* Main.storyboard */; };
 		7435C819291F5B290084DB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435C818291F5B290084DB78 /* Assets.xcassets */; };
 		7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */; };
@@ -23,7 +22,6 @@
 		74D267B4291F7B4C000644DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B3291F7B4C000644DE /* LoginViewController.swift */; };
 		74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D267B5291F7B58000644DE /* SignUpViewController.swift */; };
 		74FB5245292103FA00F1FB2D /* SustainabilityCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB5244292103FA00F1FB2D /* SustainabilityCalcViewController.swift */; };
-		B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94792A7291F9DC600C32FE5 /* Main1.storyboard */; };
 		B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */; };
 		B94792AC291FA57300C32FE5 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792AB291FA57300C32FE5 /* Food.swift */; };
 		B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94792AD291FA5DB00C32FE5 /* MealPlan.swift */; };
@@ -47,7 +45,6 @@
 		7435C80C291F5B270084DB78 /* UMass-Dieting-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UMass-Dieting-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7435C80F291F5B270084DB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7435C811291F5B270084DB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7435C813291F5B270084DB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7435C816291F5B270084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7435C818291F5B290084DB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7435C81B291F5B290084DB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		74D267B3291F7B4C000644DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74D267B5291F7B58000644DE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		74FB5244292103FA00F1FB2D /* SustainabilityCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SustainabilityCalcViewController.swift; sourceTree = "<group>"; };
-		B94792A7291F9DC600C32FE5 /* Main1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main1.storyboard; sourceTree = "<group>"; };
 		B94792A9291FA0BC00C32FE5 /* MealPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanViewController.swift; sourceTree = "<group>"; };
 		B94792AB291FA57300C32FE5 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B94792AD291FA5DB00C32FE5 /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
@@ -161,11 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				7430CC192920F3DC0085A6A2 /* LaunchScreenGIF.png */,
-				7435C815291F5B270084DB78 /* Main.storyboard */,
-				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
+				B9C056C4296AABB9007B6DBD /* Storyboards */,
 				7435C818291F5B290084DB78 /* Assets.xcassets */,
 				B9A8D7AA291F89BB00E01F31 /* DiningHallTableViewCell.swift */,
-				B94792A7291F9DC600C32FE5 /* Main1.storyboard */,
 				B94792B1291FB51500C32FE5 /* FoodTableViewCell.swift */,
 			);
 			path = Views;
@@ -175,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				74A2355429204BAF00DDBAA6 /* URLSessions */,
-				7435C813291F5B270084DB78 /* ViewController.swift */,
 				B9A8D798291F626200E01F31 /* UserInfoFormViewController.swift */,
 				74D267B3291F7B4C000644DE /* LoginViewController.swift */,
 				74D267B5291F7B58000644DE /* SignUpViewController.swift */,
@@ -201,6 +194,15 @@
 				74A23552292049DF00DDBAA6 /* Constants.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B9C056C4296AABB9007B6DBD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7435C815291F5B270084DB78 /* Main.storyboard */,
+				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +268,6 @@
 				7435C81C291F5B290084DB78 /* LaunchScreen.storyboard in Resources */,
 				7430CC1A2920F3DC0085A6A2 /* LaunchScreenGIF.png in Resources */,
 				7435C819291F5B290084DB78 /* Assets.xcassets in Resources */,
-				B94792A8291F9DC600C32FE5 /* Main1.storyboard in Resources */,
 				7435C817291F5B270084DB78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,7 +311,6 @@
 				B94792BE2920806300C32FE5 /* DietaryRestrictionViewController.swift in Sources */,
 				B94792B2291FB51500C32FE5 /* FoodTableViewCell.swift in Sources */,
 				B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */,
-				7435C814291F5B270084DB78 /* ViewController.swift in Sources */,
 				B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */,
 				74A2355629204BCC00DDBAA6 /* Sessions.swift in Sources */,
 				7435C810291F5B270084DB78 /* AppDelegate.swift in Sources */,

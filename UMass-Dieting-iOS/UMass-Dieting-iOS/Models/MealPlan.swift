@@ -8,7 +8,6 @@
 import Foundation
 struct MealPlan {
     var foods: [Food]
-    
     var calories: Float32
     var saturatedFat: Float32
     var transFat: Float32
@@ -18,5 +17,4 @@ struct MealPlan {
     var dietary_fiber: Float32
     var sugars: Float32
     var protein: Float32
-
 }
