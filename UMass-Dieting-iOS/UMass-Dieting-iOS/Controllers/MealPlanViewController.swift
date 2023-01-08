@@ -148,7 +148,8 @@ class MealPlanViewController: UIViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             if let cell = tableView.dequeueReusableCell(withIdentifier: FoodTableViewCell.reuseIdentifier, for: indexPath) as? FoodTableViewCell {
                 let food: Food = foods[indexPath.section][indexPath.row]
-                cell.food = food
+                let viewModel = FoodViewModel(dishName: food.dish_name ?? "", servingSize: food.serving_size ?? "", carbonRating: food.carbon_rating ?? "", tags: food.tags ?? "")
+                cell.configure(with: viewModel)
                 cell.accessoryType = .disclosureIndicator
                 return cell
             } else {

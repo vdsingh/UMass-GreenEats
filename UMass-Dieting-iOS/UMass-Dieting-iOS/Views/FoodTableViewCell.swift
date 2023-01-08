@@ -10,13 +10,6 @@ import UIKit
 class FoodTableViewCell: UITableViewCell {
     static let reuseIdentifier = "FoodTableViewCell"
     private let iconSize: CGFloat = 30
-    var food: Food? = nil {
-        didSet {
-            foodTitle.attributedText = food?.dish_name?.withBoldText(text: food?.dish_name ?? "", fontSize: 18)
-            foodSubTitle.text = food?.serving_size
-            loadTagImages()
-        }
-    }
     
     let foodTitle: UILabel = {
         let foodTitle = UILabel()
@@ -66,19 +59,19 @@ class FoodTableViewCell: UITableViewCell {
         
         leftStack.addArrangedSubview(imagesStack)
         leftStack.addArrangedSubview(labelsStack)
-                
+        
         labelsStack.addArrangedSubview(foodTitle)
         labelsStack.addArrangedSubview(foodSubTitle)
         
         labelsStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-
+        
         imagesStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         leftStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         leftStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10).isActive = true
         leftStack.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 10).isActive = true
         leftStack.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-
+        
         leftStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
     
@@ -91,7 +84,7 @@ class FoodTableViewCell: UITableViewCell {
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
         icon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-
+        
         if (sustainabilityRating == "A") {
             icon.image = UIImage(systemName: "a.circle.fill")
             icon.tintColor = .systemGreen
@@ -114,75 +107,76 @@ class FoodTableViewCell: UITableViewCell {
         } else {
             return
         }
-
+        
         imagesStack.addArrangedSubview(icon)
     }
     
-    func loadTagImages() {
-        guard let food = self.food else {
-            fatalError("$ERROR: Food is nil")
-        }
-        
+    func loadTagImages(with viewModel: FoodViewModel) {
         for view in imagesStack.subviews{
             view.removeFromSuperview()
         }
         
-        configureSustainabilityImage(sustainabilityRating: food.carbon_rating ?? "")
-                
-        if let tags = food.tags {
-            if (tags.contains(K.vegTag)) {
-                let vegetarianIcon: UIImageView = UIImageView(image: K.vegetarianImage)
-                vegetarianIcon.translatesAutoresizingMaskIntoConstraints = false
-                vegetarianIcon.tintColor = .systemGreen
-                imagesStack.addArrangedSubview(vegetarianIcon)
-                vegetarianIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-                vegetarianIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            }
-            
-            if (tags.contains(K.localTag)) {
-                let localIcon: UIImageView = UIImageView(image: K.localImage)
-                localIcon.translatesAutoresizingMaskIntoConstraints = false
-                localIcon.tintColor = .orange
-                imagesStack.addArrangedSubview(localIcon)
-                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            }
-            
-            if (tags.contains(K.halalTag)) {
-                let localIcon: UIImageView = UIImageView(image: K.halalImage)
-                localIcon.translatesAutoresizingMaskIntoConstraints = false
-                localIcon.tintColor = .systemPurple
-                imagesStack.addArrangedSubview(localIcon)
-                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            }
-            
-            if (tags.contains(K.sustainableTag)) {
-                let localIcon: UIImageView = UIImageView(image: K.sustainableImage)
-                localIcon.translatesAutoresizingMaskIntoConstraints = false
-                localIcon.tintColor = .systemGreen
-                imagesStack.addArrangedSubview(localIcon)
-                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            }
-            
-            if (tags.contains(K.wholeGrainTag)) {
-                let localIcon: UIImageView = UIImageView(image: K.wholeGrainImage)
-                localIcon.translatesAutoresizingMaskIntoConstraints = false
-                localIcon.tintColor = .systemYellow
-                imagesStack.addArrangedSubview(localIcon)
-                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            }
-            
-            if (tags.contains(K.antibioticFreeTag)) {
-                let localIcon: UIImageView = UIImageView(image: K.antibioticFreeImage)
-                localIcon.translatesAutoresizingMaskIntoConstraints = false
-                localIcon.tintColor = .systemBlue
-                imagesStack.addArrangedSubview(localIcon)
-                localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
-                localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
-            }
+        configureSustainabilityImage(sustainabilityRating: viewModel.carbonRating)
+        
+        let tags = viewModel.tags
+        if (tags.contains(K.vegTag)) {
+            let vegetarianIcon: UIImageView = UIImageView(image: K.vegetarianImage)
+            vegetarianIcon.translatesAutoresizingMaskIntoConstraints = false
+            vegetarianIcon.tintColor = .systemGreen
+            imagesStack.addArrangedSubview(vegetarianIcon)
+            vegetarianIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            vegetarianIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
         }
+        
+        if (tags.contains(K.localTag)) {
+            let localIcon: UIImageView = UIImageView(image: K.localImage)
+            localIcon.translatesAutoresizingMaskIntoConstraints = false
+            localIcon.tintColor = .orange
+            imagesStack.addArrangedSubview(localIcon)
+            localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        }
+        
+        if (tags.contains(K.halalTag)) {
+            let localIcon: UIImageView = UIImageView(image: K.halalImage)
+            localIcon.translatesAutoresizingMaskIntoConstraints = false
+            localIcon.tintColor = .systemPurple
+            imagesStack.addArrangedSubview(localIcon)
+            localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        }
+        
+        if (tags.contains(K.sustainableTag)) {
+            let localIcon: UIImageView = UIImageView(image: K.sustainableImage)
+            localIcon.translatesAutoresizingMaskIntoConstraints = false
+            localIcon.tintColor = .systemGreen
+            imagesStack.addArrangedSubview(localIcon)
+            localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        }
+        
+        if (tags.contains(K.wholeGrainTag)) {
+            let localIcon: UIImageView = UIImageView(image: K.wholeGrainImage)
+            localIcon.translatesAutoresizingMaskIntoConstraints = false
+            localIcon.tintColor = .systemYellow
+            imagesStack.addArrangedSubview(localIcon)
+            localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        }
+        
+        if (tags.contains(K.antibioticFreeTag)) {
+            let localIcon: UIImageView = UIImageView(image: K.antibioticFreeImage)
+            localIcon.translatesAutoresizingMaskIntoConstraints = false
+            localIcon.tintColor = .systemBlue
+            imagesStack.addArrangedSubview(localIcon)
+            localIcon.heightAnchor.constraint(equalToConstant: iconSize).isActive = true
+            localIcon.widthAnchor.constraint(equalToConstant: iconSize).isActive = true
+        }
+    }
+    
+    public func configure(with viewModel: FoodViewModel) {
+        foodTitle.attributedText = viewModel.dishName.withBoldText(text: viewModel.dishName, fontSize: 18)
+        foodSubTitle.text = viewModel.servingSize
+        loadTagImages(with: viewModel)
     }
 }

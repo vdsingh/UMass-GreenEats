@@ -60,21 +60,7 @@ class DiningHallTableViewCell: UITableViewCell {
         return container
     }()
     
-    var diningHall: DiningHall? {
-        didSet {
-            if let diningHall = diningHall {
-                diningHallTitleLabel.attributedText = diningHall.name.withBoldText(text: diningHall.name, fontSize: 26)
-                diningHallTitleLabel.textColor = UIColor(hexString: diningHall.colorHex)
-                daysOfOperationLabel.text = "\(diningHall.daysOfOperation) from \(diningHall.hoursOfOperation)"
-                daysOfOperationLabel.textColor = UIColor(hexString: diningHall.colorHex)
-                
-                diningHallImageView.image = UIImage(named: diningHall.imageName)
-                
-                container.backgroundColor = UIColor(hexString: diningHall.colorHex)
-            }
-        }
-    }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)        
         contentView.addSubview(container)
@@ -115,5 +101,17 @@ class DiningHallTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    public func configure(with viewModel: DiningHallViewModel) {
+        diningHallTitleLabel.attributedText = viewModel.diningHallName.withBoldText(text: viewModel.diningHallName, fontSize: 26)
+        diningHallTitleLabel.textColor = UIColor(hexString: viewModel.colorHex)
+        
+        daysOfOperationLabel.text = "\(viewModel.daysOfOperationString) from \(viewModel.hoursOfOperationString)"
+        daysOfOperationLabel.textColor = UIColor(hexString: viewModel.colorHex)
+        
+        diningHallImageView.image = UIImage(named: viewModel.imageName)
+        
+        container.backgroundColor = UIColor(hexString: viewModel.colorHex)
     }
 }

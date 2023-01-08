@@ -36,6 +36,8 @@
 		B9A8D7A7291F7C6D00E01F31 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A6291F7C6D00E01F31 /* State.swift */; };
 		B9A8D7A9291F7C8A00E01F31 /* DiningHall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7A8291F7C8A00E01F31 /* DiningHall.swift */; };
 		B9A8D7AB291F89BB00E01F31 /* DiningHallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8D7AA291F89BB00E01F31 /* DiningHallTableViewCell.swift */; };
+		B9C056C7296AAD2F007B6DBD /* DiningHallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C056C6296AAD2F007B6DBD /* DiningHallViewModel.swift */; };
+		B9C056C9296AAE89007B6DBD /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C056C8296AAE89007B6DBD /* FoodViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		B9A8D7A6291F7C6D00E01F31 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		B9A8D7A8291F7C8A00E01F31 /* DiningHall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHall.swift; sourceTree = "<group>"; };
 		B9A8D7AA291F89BB00E01F31 /* DiningHallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallTableViewCell.swift; sourceTree = "<group>"; };
+		B9C056C6296AAD2F007B6DBD /* DiningHallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningHallViewModel.swift; sourceTree = "<group>"; };
+		B9C056C8296AAE89007B6DBD /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
 		CADADE91AAFF913CD86C93C0 /* Pods_UMass_Dieting_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UMass_Dieting_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +121,7 @@
 		7435C80E291F5B270084DB78 /* UMass-Dieting-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B9C056C5296AAD0F007B6DBD /* ViewModels */,
 				B9A8D797291F5BBD00E01F31 /* Resources */,
 				B9A8D796291F5BB800E01F31 /* Controllers */,
 				B9A8D795291F5BB400E01F31 /* Views */,
@@ -203,6 +208,15 @@
 				7435C81A291F5B290084DB78 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B9C056C5296AAD0F007B6DBD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B9C056C6296AAD2F007B6DBD /* DiningHallViewModel.swift */,
+				B9C056C8296AAE89007B6DBD /* FoodViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +323,7 @@
 				74D267B6291F7B58000644DE /* SignUpViewController.swift in Sources */,
 				B94792BC2920489000C32FE5 /* FoodViewController.swift in Sources */,
 				B94792BE2920806300C32FE5 /* DietaryRestrictionViewController.swift in Sources */,
+				B9C056C9296AAE89007B6DBD /* FoodViewModel.swift in Sources */,
 				B94792B2291FB51500C32FE5 /* FoodTableViewCell.swift in Sources */,
 				B9A8D79B291F696800E01F31 /* Extensions.swift in Sources */,
 				B94792AA291FA0BC00C32FE5 /* MealPlanViewController.swift in Sources */,
@@ -322,6 +337,7 @@
 				74FB5245292103FA00F1FB2D /* SustainabilityCalcViewController.swift in Sources */,
 				7435C812291F5B270084DB78 /* SceneDelegate.swift in Sources */,
 				B94792AE291FA5DB00C32FE5 /* MealPlan.swift in Sources */,
+				B9C056C7296AAD2F007B6DBD /* DiningHallViewModel.swift in Sources */,
 				B94792AC291FA57300C32FE5 /* Food.swift in Sources */,
 				B9A8D7A9291F7C8A00E01F31 /* DiningHall.swift in Sources */,
 				B94792B42920386A00C32FE5 /* K.swift in Sources */,

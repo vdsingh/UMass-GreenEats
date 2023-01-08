@@ -9,8 +9,8 @@ import UIKit
 
 class DiningHallListViewController: UIViewController {
     @IBOutlet weak var diningHallTableView: UITableView!
-    private var dataTask: URLSessionDataTask?
     
+    private var dataTask: URLSessionDataTask?
     var foods: [Food]? = []
     var selectedDiningHall: DiningHall? = nil
     
@@ -31,8 +31,12 @@ extension DiningHallListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let diningHall: DiningHall = State.shared.diningHalls[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: DiningHallTableViewCell.reuseIdentifier, for: indexPath) as? DiningHallTableViewCell {
-            cell.diningHall = diningHall
-            
+            let viewModel = DiningHallViewModel(diningHallName: diningHall.name,
+                                                colorHex: diningHall.colorHex,
+                                                daysOfOperationString: diningHall.daysOfOperation,
+                                                hoursOfOperationString: diningHall.hoursOfOperation,
+                                                imageName: diningHall.imageName)
+            cell.configure(with: viewModel)
             return cell
         }
         return UITableViewCell()
