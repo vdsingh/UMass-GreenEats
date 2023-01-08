@@ -9,6 +9,8 @@
 
 </div>
 
+Devpost Link: https://devpost.com/software/umass-greeneats
+
 ## Inspiration 🍃
 Human activity in the last 500 years has brought extinction upon more than 800 species. 
 Up to 200 million people could be displaced by climate change by 2050. 
